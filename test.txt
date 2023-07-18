@@ -1,1 +1,0 @@
-This is just a dummy file for testing the delete capability of the WP Engine pipeline.

@@ -13,4 +13,5 @@ jobs:
       with:
         WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
         WPE_ENV: carminedev
+        REMOTE_PATH: "wp-content/"
         FLAGS: -azvr --inplace --exclude=".*" --delete

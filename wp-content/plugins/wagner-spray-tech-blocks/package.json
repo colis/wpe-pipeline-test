@@ -1,0 +1,59 @@
+{
+	"name": "wagner-spray-tech-blocks",
+	"version": "0.0.1",
+	"description": "Wagner Spray Tech Blocks",
+	"author": {
+		"name": "Americaneagle.com",
+		"email": "info@americaneagle.com",
+		"url": "https://www.americaneagle.com/",
+		"role": "developer"
+	},
+	"license": "MIT",
+	"scripts": {
+		"build": "wp-scripts build",
+		"watch": "wp-scripts start",
+		"lint:js": "wp-scripts lint-js",
+		"lint:css": "wp-scripts lint-style --fix"
+	},
+	"lint-staged": {
+		"*.css": [
+			"npm run lint:css"
+		],
+		"*.js": [
+			"npm run lint:js"
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AEWP/wagner-spray-tech"
+	},
+	"devDependencies": {
+		"@wordpress/block-editor": "^12.3.0",
+		"@wordpress/blocks": "^12.12.0",
+		"@wordpress/components": "^25.1.0",
+		"@wordpress/compose": "^6.10.0",
+		"@wordpress/core-data": "^6.12.0",
+		"@wordpress/data": "^9.5.0",
+		"@wordpress/element": "^5.13.0",
+		"@wordpress/i18n": "^4.36.0",
+		"@wordpress/icons": "^9.24.0",
+		"@wordpress/scripts": "^26.6.0",
+		"@wordpress/server-side-render": "^4.12.0",
+		"eslint-import-resolver-webpack": "^0.13.2",
+		"eslint-plugin-prettier": "^4.2.1",
+		"html-entities": "^2.4.0",
+		"html-react-parser": "^4.0.0",
+		"lint-staged": "^13.2.3",
+		"prettier": "^2.8.8",
+		"react": "^18.2.0"
+	},
+	"engines": {
+		"node": ">=16.0.0"
+	},
+	"dependencies": {
+		"lodash.isequal": "^4.5.0"
+	},
+	"overrides": {
+		"eslint-plugin-jsdoc": "39.6.2"
+	}
+}

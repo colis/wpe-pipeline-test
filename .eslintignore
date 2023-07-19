@@ -1,0 +1,7 @@
+vendor
+webpack.config.js
+wp-admin
+wp-includes
+wp-content/plugins
+wp-content/uploads
+wp-content/themes/wagner-spray-tech/dist

@@ -1,0 +1,15 @@
+/**
+ * WagnerSprayTechCore
+ */
+
+/* Global - global pieces like media queries, mixins and placholders */
+@import url(global/index);
+
+/* Base - base styles such as fonts, typography, and wordpress overrides */
+@import url(base/index);
+
+/* Layout - styles specific to layout */
+@import url(layout/index);
+
+/* Components */
+@import url(components/index);

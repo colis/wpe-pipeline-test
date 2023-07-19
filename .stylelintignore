@@ -1,0 +1,9 @@
+vendor
+wp-admin
+wp-includes
+wp-content/plugins/*
+!wp-content/plugins/wagner-spray-tech-core
+wp-content/plugins/wagner-spray-tech-core/dist
+wp-content/uploads
+wp-content/themes/wagner-spray-tech/assets/sass/02-generic/_normalize.scss
+wp-content/themes/wagner-spray-tech/dist

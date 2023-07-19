@@ -7,11 +7,34 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout files and setup environment
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Set up Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14.x
+
+    - name: Set up authentication for SatisPress packages
+      run: composer config http-basic.aepackagist.wpengine.com ${{ secrets.SATISPRESS_API_KEY }} satispress
+
+    - name: Install project dependencies
+      run: composer install --no-dev -o
+
+    - name: Build project assets
+      run: npm install && npm run build
+
+    - name: Build block assets
+      run: npm install && npm run build
+      working-directory: wp-content/plugins/wagner-spray-tech-blocks
+
     - name: GitHub Action Deploy to WP Engine
       uses: wpengine/github-action-wpe-site-deploy@v3
       with:
         WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
         WPE_ENV: carminedev
+        SRC_PATH: "wp-content/"
         REMOTE_PATH: "wp-content/"
-        FLAGS: -azvr --inplace --exclude=".*" --delete
+        FLAGS: -azvr --inplace --delete --exclude=".*"

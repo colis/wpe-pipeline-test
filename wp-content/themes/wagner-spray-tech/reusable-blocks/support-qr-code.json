@@ -1,0 +1,5 @@
+{
+  "__file": "wp_block",
+  "title": "Support QR Code",
+  "content": "<!-- wp:group {\"tagName\":\"article\",\"align\":\"wide\",\"style\":{\"border\":{\"width\":\"3px\"}},\"borderColor\":\"black\",\"className\":\"wst-support-qr-code\",\"layout\":{\"type\":\"default\"}} -->\n<article class=\"wp-block-group alignwide wst-support-qr-code has-border-color has-black-border-color \" style=\"border-width:3px\"><!-- wp:heading {\"level\":1,\"fontSize\":\"medium\"} -->\n<h1 class=\"wp-block-heading has-medium-font-size\">Scan Your QR Code</h1>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>You can scan the QR Code on your product to view helpful information for it</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image -->\n<figure class=\"wp-block-image\"><img alt=\"\"/></figure>\n<!-- /wp:image --></article>\n<!-- /wp:group -->"
+}

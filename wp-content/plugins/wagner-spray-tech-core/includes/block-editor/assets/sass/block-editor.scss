@@ -1,0 +1,34 @@
+/**
+ * #.# Common
+ *
+ * Import SASS files
+ *
+ */
+.wp-block-group.is-desktop-only,
+.wp-block-group.is-mobile-only {
+
+	display: unset;
+	border: 2px solid var(--wp--preset--color--black);
+
+	&::before {
+		background-color: var(--wp--preset--color--black);
+		color: var(--wp--preset--color--white);
+		display: block;
+		font-family: RobotoCondensed, sans-serif;
+		font-size: var(--wp--preset--font-size--small);
+		padding: 0 1rem;
+		position: absolute;
+		right: -2px;
+		bottom: 100%;
+		box-sizing: border-box;
+		z-index: 1;
+	}
+}
+
+.wp-block-group.is-mobile-only::before {
+	content: "Mobile Only";
+}
+
+.wp-block-group.is-desktop-only::before {
+	content: "Desktop Only";
+}

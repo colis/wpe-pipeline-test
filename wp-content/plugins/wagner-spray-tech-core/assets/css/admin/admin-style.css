@@ -1,0 +1,18 @@
+/**
+ * WagnerSprayTechCore - Admin Styles
+ */
+
+#wagner-spray-tech-core-options tr.test {
+	display: none;
+}
+
+#wagner-spray-tech-core-options td {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+#wagner-spray-tech-core-options .error {
+	display: none;
+}
+

@@ -1,0 +1,116 @@
+/* ==========================================================================
+TABLE BLOCK
+========================================================================== */
+
+.wp-block-table {
+	margin-top: var(--wp--custom--spacings--l);
+	margin-bottom: var(--wp--custom--spacings--l);
+
+	table {
+
+		thead,
+		tfoot {
+			border: none;
+		}
+
+		thead {
+			background-color: var(--wp--custom--colors--yellow);
+
+			th {
+				border-top: none;
+				border-color: var(--wp--custom--colors--gray-200);
+
+				&:first-of-type {
+					border-left-color: var(--wp--custom--colors--yellow);
+				}
+
+				&:last-of-type {
+					border-right-color: var(--wp--custom--colors--yellow);
+				}
+			}
+		}
+
+		tfoot {
+
+			td {
+				padding-top: var(--wp--custom--spacings--s);
+				padding-bottom: var(--wp--custom--spacings--s);
+			}
+		}
+
+		tbody {
+
+			tr {
+
+				th,
+				td {
+					border-width: 2px;
+					border-color: var(--wp--custom--colors--gray-200);
+
+					&.has-green-check-icon,
+					&.has-yellow-check-icon,
+					&.has-red-close-icon {
+
+						&::before {
+
+							@include flex-center;
+							display: inline-flex;
+							content: "";
+							margin-right: var(--wp--custom--spacings--xs);
+							border-radius: 50%;
+							width: var(--wp--custom--spacings--l);
+							height: var(--wp--custom--spacings--l);
+						}
+					}
+
+					&.has-green-check-icon::before {
+						content: url(map-get($images, 'icon-check-white'));
+						background-color: var(--wp--custom--colors--green);
+					}
+
+					&.has-yellow-check-icon::before {
+						content: url(map-get($images, 'icon-check'));
+						background-color: var(--wp--custom--colors--yellow);
+					}
+
+					&.has-red-close-icon::before {
+						color: var(--wp--custom--colors--white);
+						content: "X";
+						background-color: var(--wp--custom--colors--red);
+					}
+
+
+				}
+
+			}
+
+		}
+
+	}
+
+	&.is-style-black-header {
+
+		table {
+
+			thead {
+				background-color: var(--wp--custom--colors--black);
+
+				th {
+					color: var(--wp--custom--colors--white);
+					background-color: var(--wp--custom--colors--black);
+
+					&:first-of-type {
+						border-left-color: var(--wp--custom--colors--black);
+					}
+
+					&:last-of-type {
+						border-right-color: var(--wp--custom--colors--black);
+					}
+				}
+
+			}
+		}
+	}
+
+
+}

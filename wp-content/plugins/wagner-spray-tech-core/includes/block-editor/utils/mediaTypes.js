@@ -1,5 +1,11 @@
 // List of allowed content types for media related blocks.
-export const mediaTypes = ['article', 'news', 'podcast', 'press-room', 'video'];
+export const mediaTypes = [
+	'article',
+	'news',
+	'podcast',
+	'press-room',
+	'video',
+];
 
 export const mediaTypeLabels = {
 	article: 'Article',

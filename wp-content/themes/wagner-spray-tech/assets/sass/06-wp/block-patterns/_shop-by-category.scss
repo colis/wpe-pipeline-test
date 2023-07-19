@@ -1,0 +1,32 @@
+//------------------------------------
+// Shop By Category.
+//------------------------------------
+.shop-by-category {
+	padding: var(--wp--custom--spacings--xxxxxxl) 0 !important;
+	width: 100%;
+	overflow-x: hidden;
+
+	.shop-by-category__row {
+		width: 100%;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		margin-bottom: var(--wp--custom--spacings--m);
+		overflow-x: hidden;
+
+		> .wp-block-group {
+			flex: 1 1 auto;
+			padding: var(--wp--custom--spacings--m) var(--wp--custom--spacings--s);
+			min-width: calc(var(--wp--custom--spacings--xxxxxxl) * 2);
+			align-self: stretch;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+		}
+
+		.shop-by-category__cat-title a {
+			text-decoration: none;
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,39 @@
+/* ==========================================================================
+HEADER
+========================================================================== */
+
+.c-site-header {
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+}
+
+.c-site-header__inner {
+	width: 100%;
+	background-color: var(--wp--custom--colors--yellow);
+	position: relative;
+	z-index: 5;
+}
+
+.c-site-header__content {
+	display: grid;
+	grid-column-gap: var(--wp--custom--spacings--s);
+	column-gap: var(--wp--custom--spacings--s);
+	grid-template-columns: repeat(2, auto);
+	grid-template-rows: 1fr;
+	padding: var(--wp--custom--spacings--xs) 0;
+	height: var(--header-height);
+
+	@include for-tablet-landscape-up {
+		grid-template-columns: 1fr auto 1fr;
+		padding: 0;
+		position: relative;
+	}
+}
+
+// Move header if user is logged in,
+// to account for WP admin bar.
+body.admin-bar .c-site-header {
+	top: var(--wp-admin-bar);
+}

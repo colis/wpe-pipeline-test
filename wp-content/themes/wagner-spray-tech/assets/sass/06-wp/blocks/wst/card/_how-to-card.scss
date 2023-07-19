@@ -1,0 +1,116 @@
+/* ==========================================================================
+How To Card
+========================================================================== */
+.wst-blocks-how-to-card {
+
+	display: grid;
+	grid-template-rows: 300px min-content 1fr min-content;
+	background-color: var(--wp--custom--colors--black);
+	height: 100%;
+
+	&__image,
+	&__title,
+	&__excerpt,
+	&__button {
+
+		@include reset-all;
+		color: var(--wp--custom--colors--white);
+	}
+
+	&__image,
+	&__title,
+	&__excerpt {
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+
+	&__title,
+	&__excerpt,
+	&__button {
+		color: var(--wp--custom--colors--white);
+		padding: 0;
+		margin: var(--wp--custom--spacings--s) var(--wp--custom--spacings--s);
+	}
+
+
+	&__image {
+		position: relative;
+		height: 300px;
+
+		&::before {
+
+			@include flex-center;
+			content: url(map-get($images, 'icon-nav-chevron'));
+			background-color: var(--wp--custom--colors--yellow);
+			z-index: 2;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: rotate(270deg) translate(50%, -50%);
+			height: var(--wp--custom--spacings--xxxxl);
+			width: var(--wp--custom--spacings--xxxxl);
+			border-radius: 50%;
+		}
+
+		img {
+
+			@include fit-image;
+			object-fit: cover;
+			z-index: 1;
+			position: relative;
+		}
+	}
+
+
+	&__title {
+		font-size: var(--wp--preset--font-size--medium);
+
+	}
+
+	&__button {
+
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-start;
+		font-size: var(--wp--preset--font-size--medium);
+		border: 2px solid var(--wp--custom--colors--white);
+		border-radius: var(--wp--preset--font-size--medium);
+		padding: var(--wp--custom--spacings--xxs) var(--wp--custom--spacings--xs) var(--wp--custom--spacings--xxs) var(--wp--custom--spacings--s);
+		text-decoration: none;
+		justify-self: flex-start;
+
+		&:hover {
+			background-color: var(--wp--custom--colors--white);
+			color: var(--wp--custom--colors--black);
+
+			&::after {
+				background-color: var(--wp--custom--colors--white);
+			}
+		}
+
+		&::after {
+
+			content: url(map-get( $images, 'icon-close'));
+			background-color: var(--wp--custom--colors--yellow);
+			height: var(--wp--custom--spacings--xs);
+			width: var(--wp--custom--spacings--xs);
+			padding: var(--wp--custom--spacings--xs);
+			margin-left: var(--wp--custom--spacings--s);
+			box-sizing: content-box;
+			border-radius: 50%;
+			transform: rotate(45deg);
+			line-height: 0;
+
+		}
+	}
+}
+
+.block-editor-block-list__layout .wst-blocks-how-to-card {
+
+	* {
+		pointer-events: none;
+	}
+}

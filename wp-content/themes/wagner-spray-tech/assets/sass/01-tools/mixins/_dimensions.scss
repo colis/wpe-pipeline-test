@@ -1,0 +1,24 @@
+/* ==========================================================================
+DIMENSIONS
+========================================================================== */
+
+/**
+ * Helper for absolute full
+ */
+@mixin absolute-full($top: 0, $left: 0, $height: 100%, $width: 100%) {
+	height: $height;
+	left: $left;
+	position: absolute;
+	top: $top;
+	width: $width;
+}
+
+/**
+ * Helper for flex center
+ */
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+

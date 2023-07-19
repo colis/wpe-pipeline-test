@@ -1,0 +1,114 @@
+/* ==========================================================================
+PAGINATION
+========================================================================== */
+
+.pagination {
+	border-top: solid 1px var(--wp--custom--colors--gray-200);
+	margin-top: var(--wp--custom--spacings--m);
+	padding-top: var(--wp--custom--spacings--m);
+
+	&:empty {
+		display: none;
+	}
+
+	.nav-links,
+	.wp-pagenavi {
+
+		@include flex-center;
+	}
+
+	.nav-prev-text,
+	.nav-next-text,
+	li.disabled {
+		display: none;
+	}
+
+	.previouspostslink,
+	.nextpostslink,
+	.page,
+	.current,
+	.page-numbers {
+
+		@include flex-center;
+		height: 40px;
+		width: 40px;
+		background-color: var(--wp--custom--colors--gray-200);
+		border-radius: 3px;
+		// padding-top: 2px;
+		margin: 0 var(--wp--custom--spacings--xxs);
+		font-size: var(--wp--preset--font-size--small);
+		font-weight: 700;
+		text-decoration: none;
+
+		&:hover:not(.current) {
+			color: var(--wp--custom--colors--yellow);
+			background-color: var(--wp--custom--colors--gray-200);
+			border-color: var(--wp--custom--colors--gray-200);
+		}
+	}
+
+	.previouspostslink,
+	.nextpostslink {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: var(--wp--custom--spacings--xs);
+		align-items: center;
+		justify-content: center;
+		padding-left: var(--wp--custom--spacings--s);
+		padding-right: var(--wp--custom--spacings--s);
+		width: auto;
+
+		&::before,
+		&::after {
+			display: block;
+			height: 7px;
+			width: 11px;
+			mask-image: url(map-get($images, 'icon-chevron-down'));
+			mask-size: contain;
+			mask-repeat: no-repeat;
+			background-color: var(--wp--custom--colors--black);
+		}
+	}
+
+	.previouspostslink {
+
+		&::before {
+			content: "";
+			transform: rotate(90deg);
+		}
+
+		&:hover::before {
+			background-color: var(--wp--custom--colors--yellow);
+		}
+	}
+
+	.nextpostslink {
+
+		&::after {
+			content: "";
+			transform: rotate(-90deg);
+		}
+
+		&:hover::after {
+			background-color: var(--wp--custom--colors--yellow);
+		}
+	}
+
+	.wp-pagenavi {
+
+		*:first-child {
+			margin-left: 0;
+		}
+
+		*:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.current,
+	li.current .page-numbers,
+	.page-numbers.current {
+		color: var(--wp--custom--colors--white);
+		background-color: var(--wp--custom--colors--black);
+	}
+}

@@ -1,0 +1,56 @@
+/* ==========================================================================
+BREADCRUMBS
+========================================================================== */
+
+.c-breadcrumbs {
+
+	font-size: var(--wp--preset--font-size--xx-small);
+	font-weight: 700;
+	text-transform: uppercase;
+	margin: 0;
+	width: 100vw;
+	padding: var(--wp--custom--spacings--xs) 0;
+	border-bottom: solid 1px var(--wp--custom--colors--black-rgba-0125);
+
+	ul {
+
+		@include reset_list_style;
+		@include grid_container;
+	}
+
+	li {
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin: 0 var(--wp--custom--spacings--xxs) 0 0;
+		padding: 0;
+
+
+		&::after {
+			font-size: var(--wp--preset--font-size-m);
+			margin-left: var(--wp--custom--spacings--xxs);
+			content: ">";
+		}
+
+		&:last-child {
+			margin-right: 0;
+
+			&::after {
+				display: none;
+			}
+		}
+
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			color: var(--wp--custom--colors--black);
+			text-decoration: underline;
+		}
+
+	}
+
+
+}

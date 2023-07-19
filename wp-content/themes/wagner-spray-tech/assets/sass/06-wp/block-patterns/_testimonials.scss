@@ -1,0 +1,85 @@
+//------------------------------------
+// Homepage Testimonials.
+// @todo this may be obsolete.
+//------------------------------------
+.home-testimonials {
+	padding: 100px 0;
+
+	.home-testimonial-row {
+		width: 100%;
+		overflow-x: hidden;
+
+		.home-testimonial-card {
+			padding: 2.75em 2.375em;
+			min-width: 490px;
+			align-self: stretch;
+			justify-content: space-between;
+			-webkit-clip-path: polygon(0 0, 0 175%, 100% 80%, 100% 100%, 100% 0);
+			clip-path: polygon(0 0, 0 175%, 100% 80%, 100% 100%, 100% 0);
+
+			.wp-block-quote {
+				font-weight: 800;
+
+				&::before {
+					content: "";
+					background-image: url(map-get($images, 'icon-quote'));
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+					height: 30px;
+					width: 24px;
+					display: block;
+					margin: 0 auto 2rem auto;
+				}
+			}
+
+			a:where(:not(.wp-element-button)) {
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+
+				&:hover {
+					text-decoration: underline;
+					color: var(--wp--custom--colors--black);
+
+					&::after {
+						position: relative;
+						left: 5px;
+					}
+				}
+
+				&::after {
+					content: "";
+					background-image: url(map-get($images, 'icon-arrow-circle-black'));
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+					display: inline-block;
+					height: 27px;
+					width: 20px;
+					margin-left: 10px;
+				}
+			}
+
+			&.home-testimonial-card--cover {
+
+				.wp-block-cover__inner-container {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					position: absolute;
+					top: 40px;
+					bottom: 40px;
+					left: 40px;
+				}
+
+				a:where(:not(.wp-element-button)) {
+
+					&::after {
+						content: none;
+					}
+				}
+			}
+		}
+	}
+}

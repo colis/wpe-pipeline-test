@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wst-blocks/newsletter-cta",
+	"title": "Newsletter CTA",
+	"category": "wst-blocks",
+	"icon": "email-alt",
+	"description": "Section with newsletter form.",
+	"keywords": [ "newsletter", "cta" ],
+	"textdomain": "wagner-spray-tech-blocks",
+	"supports": {
+		"align": false
+	},
+	"editorScript": "file:./index.js"
+}

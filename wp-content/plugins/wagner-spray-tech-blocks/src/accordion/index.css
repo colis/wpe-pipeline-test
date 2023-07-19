@@ -1,0 +1,23 @@
+/**
+ * Accordion Block Editor Styles
+ */
+
+.block-editor-block-list__block.wp-block.wp-block-wst-blocks-accordion.is-editing
+.wp-block-wst-blocks-accordion-item {
+	padding-top: var(--wp--custom--spacings--m);
+}
+
+.block-editor-block-list__block.wp-block.wp-block-wst-blocks-accordion.is-editing
+.wp-block-wst-blocks-accordion-item__heading {
+	font-size: var(--wp--custom--typography--headings--h-5-font-size-desktop);
+}
+
+.block-editor-block-list__block.wp-block.wp-block-wst-blocks-accordion.is-editing
+.wp-block-wst-blocks-accordion-item__content {
+	padding-top: var(--wp--custom--spacings--m);
+}
+
+/* Move block appender button down. */
+.block-editor-block-list__block.wp-block.wp-block-wst-blocks-accordion > .block-editor-inner-blocks > .block-editor-block-list__layout {
+	padding-bottom: 68px;
+}

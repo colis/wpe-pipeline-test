@@ -1,0 +1,9 @@
+/* ==========================================================================
+Flexible Table Block
+========================================================================== */
+
+.wp-block-flexible-table-block-table.wp-block-flexible-table-block-table {
+
+	@extend .wp-block-table; /* stylelint-disable-line */
+
+}

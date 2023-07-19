@@ -1,0 +1,9 @@
+/* ==========================================================================
+SIDEBAR
+========================================================================== */
+
+@mixin sidebar_widgets {
+	margin-top: var(--wp--custom--spacings--xxl);
+	padding-top: var(--wp--custom--spacings--xxl);
+	border-top: solid 1px var(--wp--custom--colors--black-015);
+}

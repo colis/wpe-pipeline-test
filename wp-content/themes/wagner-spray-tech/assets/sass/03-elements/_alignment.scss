@@ -1,0 +1,39 @@
+/* ==========================================================================
+ALIGNMENT
+========================================================================== */
+
+.alignleft,
+.wp-block-image.alignleft {
+	float: left;
+	margin: var(--wp--custom--spacings--s) var(--wp--custom--spacings--l) var(--wp--custom--spacings--s) 0;
+}
+
+.alignright,
+.wp-block-image.alignright {
+	float: right;
+	margin: var(--wp--custom--spacings--s) 0 var(--wp--custom--spacings--s) var(--wp--custom--spacings--l);
+}
+
+.alignleft,
+.alignright,
+.wp-block-image.alignleft,
+.wp-block-image.alignright {
+
+	@include up-to-tablet-portrait {
+		display: block;
+		float: none;
+		width: 100%;
+		max-width: none !important;
+		margin: var(--wp--custom--spacings--l) 0;
+	}
+}
+
+.wp-block-image.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignfull {
+
+	@include grid_container__negative;
+}

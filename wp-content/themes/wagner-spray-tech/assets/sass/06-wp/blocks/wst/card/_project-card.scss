@@ -1,0 +1,80 @@
+/* ==========================================================================
+Project Card
+========================================================================== */
+.wst-blocks-project-card {
+	white-space: normal;
+	background-color: var(--wp--custom--colors--black);
+	height: 100%;
+	display: grid;
+	grid-template-rows: var(--card-height) 1fr;
+
+	&__image {
+		height: 100%;
+		grid-row: 1 / span 1;
+
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__content {
+		padding: var(--wp--custom--spacings--s);
+		background-color: var(--wp--custom--colors--black);
+		grid-row: 2 / span 1;
+		justify-self: stretch;
+	}
+
+	&__title {
+		font-size: var(--wp--preset--font-size--medium);
+		margin-bottom: var(--wp--custom--spacings--s);
+		padding-bottom: var(--wp--custom--spacings--s);
+		border-bottom: 2px solid var(--wp--custom--colors--gray-400);
+	}
+
+	&__title,
+	&__tag-content {
+		color: var(--wp--custom--colors--white);
+	}
+
+	&__tag-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--wp--custom--spacings--s) 0;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	&__tag-list-item {
+		flex: 50%;
+	}
+
+	&__tag-title {
+		margin-bottom: 0;
+		font-size: var(--wp--preset--font-size--xx-small);
+		font-weight: 700;
+		text-transform: uppercase;
+		color: var(--wp--custom--colors--yellow);
+	}
+
+	&__tag-content {
+		margin: 0;
+		font-size: var(--wp--preset--font-size--small);
+	}
+
+	&__tag-content--difficulty .icon {
+		position: relative;
+		top: 1px;
+		margin-right: var(--wp--custom--spacings--xxs);
+	}
+
+}
+
+.block-editor-block-list__layout .wst-blocks-project-card {
+
+	* {
+		pointer-events: none;
+	}
+}

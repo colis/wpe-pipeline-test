@@ -1,0 +1,33 @@
+//------------------------------------
+// Cover block with the additional class ".home-video-hero" styles.
+//------------------------------------
+.home-video-hero {
+
+	.wp-block-cover {
+		padding: 0 var(--wp--custom--spacings--m) var(--wp--custom--spacings--m);
+
+		@include up-to-tablet-portrait {
+			display: flex;
+			align-items: flex-end;
+		}
+
+		@include for-tablet-landscape-up {
+			padding: 0 var(--wp--custom--spacings--xxxxxxl) var(--wp--custom--spacings--xxl);
+			min-height: calc(var(--wp--custom--spacings--xxxxxxl) * 8);
+		}
+
+		@include for-desktop-up {
+			padding: 0 calc(var(--wp--custom--spacings--xxxxxxl) * 2) var(--wp--custom--spacings--xxxxxxl);
+		}
+
+		.wp-block-cover__inner-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			@include for-tablet-portrait-up {
+				align-items: flex-start;
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+/* ==========================================================================
+BODY
+========================================================================== */
+
+:root {
+	--wp-admin-bar: 32px;
+	--header-height: 82px;
+
+	@include up-to-tablet-landscape {
+		--header-height: 60px;
+	}
+
+	@media screen and (max-width: 782px) {
+		--wp-admin-bar: 46px;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	margin-top: var(--header-height);
+	color: var(--wp--custom--colors--black);
+	width: 100vw;
+}

@@ -1,0 +1,26 @@
+/* ==========================================================================
+TYPOGRAPHY
+========================================================================== */
+
+/**
+ * Typography mixins to ensure that the correct desktop
+ * and mobile sizes of fonts are correct
+ */
+@mixin font_prop_heading($heading-type: 1) {
+	font-size: var(--wp--custom--typography--headings--h-#{$heading-type}-font-size-mobile);
+	font-weight: var(--wp--custom--typography--headings--h-#{$heading-type}-font-weight);
+	line-height: var(--wp--custom--typography--headings--h-#{$heading-type}-line-height-mobile);
+
+	@include for-tablet-landscape-up {
+		font-size: var(--wp--custom--typography--headings--h-#{$heading-type}-font-size-desktop);
+		line-height: var(--wp--custom--typography--headings--h-#{$heading-type}-line-height-desktop);
+	}
+}
+
+@mixin font_prop_sidebar_sub_heading() {
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 600;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: var(--wp--custom--colors--black);
+}

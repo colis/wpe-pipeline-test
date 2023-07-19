@@ -1,0 +1,42 @@
+/* ==========================================================================
+GROUP BLOCK
+========================================================================== */
+
+.wp-block-group {
+
+	&:not(.alignfull) {
+
+		&.has-border-color,
+		&.has-background {
+			border-radius: 0.25rem;
+		}
+	}
+
+	&:where(.is-layout-flex) {
+		gap: var(--wp--custom--spacings--m);
+	}
+
+	&.has-border-color {
+		border-width: 2px !important;
+	}
+}
+
+:not(.wp-block-post-content) {
+
+	.wp-block-group {
+
+		&.is-mobile-only {
+
+			@include for-tablet-landscape-up {
+				display: none;
+			}
+		}
+
+		&.is-desktop-only {
+
+			@include up-to-tablet-landscape {
+				display: none;
+			}
+		}
+	}
+}

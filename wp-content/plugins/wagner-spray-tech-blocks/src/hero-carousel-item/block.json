@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wst-blocks/hero-carousel-item",
+	"title": "Hero Carousel Item",
+	"category": "wst-blocks",
+	"icon": "embed-photo",
+	"description": "Add a slide to the hero carousel block.",
+	"textdomain": "wagner-spray-tech-blocks",
+	"parent": [ "wst-blocks/hero-carousel" ],
+	"supports": {
+		"align": false
+	},
+	"editorScript": "file:./index.js"
+}

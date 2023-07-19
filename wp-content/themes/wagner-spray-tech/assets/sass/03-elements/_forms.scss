@@ -1,0 +1,85 @@
+/* ==========================================================================
+FORMS
+========================================================================== */
+
+// Inputs, Selects and Textareas.
+
+input,
+select,
+textarea {
+	padding: var(--wp--custom--spacings--xs);
+	line-height: 1;
+	border: solid 2px var(--wp--custom--colors--black);
+	border-radius: 3px;
+	background-color: var(--wp--custom--colors--white);
+}
+
+// Hide search input field clear text icon.
+input[type="search"]::-ms-clear,
+input[type="search"]::-ms-reveal {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+
+// Checkboxes and Radio buttons.
+
+input[type="checkbox"],
+input[type="radio"] {
+
+	@include reset_appearance;
+	display: inline-grid;
+	place-content: center;
+	height: 20px;
+	width: 20px;
+	border: solid 2px var(--wp--custom--colors--black);
+	border-radius: 0;
+	margin-right: 10px;
+
+	&:checked {
+
+		&::before {
+			display: flex;
+		}
+	}
+
+	&::before {
+		content: "";
+		display: none;
+	}
+
+	+ label {
+		font-size: var(--wp--preset--font-size--x-small);
+		font-weight: 500;
+	}
+}
+
+input[type="checkbox"] {
+
+	&::before {
+		height: 14px;
+		width: 14px;
+		background-image: url(map-get($images, 'icon-check'));
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+
+input[type="radio"] {
+	border-radius: 50%;
+
+	&::before {
+		height: 8px;
+		width: 8px;
+		border-radius: 50%;
+		background-color: var(--wp--custom--colors--black);
+	}
+}

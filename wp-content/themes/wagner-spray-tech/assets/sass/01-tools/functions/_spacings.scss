@@ -1,0 +1,20 @@
+/* ==========================================================================
+SPACING FUNCTIONS
+========================================================================== */
+
+/**
+ * Generates the value for a spacing by multiplying
+ * the global baseline with the given ratio.
+ *
+ * USAGE:
+ * margin-bottom: spacing(10);
+ *
+ * NOTE:
+ * Please use spacing variables if applicable.
+ * This function should only be used if the spacing you're trying
+ * to achieve doesn't exist in the styleguide. (see settings/spacings.scss)
+ */
+@function spacing( $ratio ) {
+
+	@return 8px * $ratio;
+}

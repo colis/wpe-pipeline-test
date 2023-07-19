@@ -1,0 +1,20 @@
+/* ==========================================================================
+WHERE TO BUY (PRICE SPIDER) WIDGET
+========================================================================== */
+.c-where-to-buy {
+
+	@include for-tablet-landscape-up {
+		width: 99%;
+	}
+
+	&__widget {
+
+		@include reset-all;
+		width: 100%;
+
+		.ps-header {
+			display: none;
+		}
+
+	}
+}

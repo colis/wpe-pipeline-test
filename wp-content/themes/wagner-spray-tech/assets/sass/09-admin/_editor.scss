@@ -1,0 +1,23 @@
+/* ==========================================================================
+EDITOR OVERRIDE STYLES
+========================================================================== */
+
+.edit-post-visual-editor__post-title-wrapper,
+.block-editor-block-list__layout.is-root-container {
+	padding: 0 var(--wp--custom--grid--gutter);
+}
+
+.edit-post-visual-editor__post-title-wrapper {
+	margin: var(--wp--custom--spacings--l) 0 var(--wp--custom--spacings--m);
+}
+
+.editor-post-title__input {
+	font-size: var(--wp--custom--typography--headings--h-2-font-size-desktop);
+	font-weight: 800;
+	color: var(--wp--custom--colors--black);
+}
+
+.block-editor-block-list__layout.is-root-container {
+	color: var(--wp--custom--colors--black);
+	line-height: 1.5;
+}

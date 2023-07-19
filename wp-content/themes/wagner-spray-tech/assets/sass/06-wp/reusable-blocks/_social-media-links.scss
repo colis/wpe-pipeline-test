@@ -1,0 +1,38 @@
+//------------------------------------
+// Social Media Links Block.
+//------------------------------------
+.wst-social-media-links-row {
+
+	ul {
+
+		@include up-to-tablet-portrait {
+			gap: var(--wp--custom--spacings--xxs);
+		}
+
+		@include up-to-tablet-landscape {
+			gap: var(--wp--custom--spacings--xs);
+		}
+
+		li {
+			border: 2px solid var(--wp--custom--colors--white);
+
+			@include up-to-tablet-landscape {
+				max-width: var(--wp--custom--spacings--xxl);
+				max-height: var(--wp--custom--spacings--xxl);
+				display: flex;
+				justify-content: center;
+			}
+
+			a {
+
+				svg {
+
+					@include up-to-tablet-landscape {
+						max-width: 1.5rem;
+						max-height: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+}

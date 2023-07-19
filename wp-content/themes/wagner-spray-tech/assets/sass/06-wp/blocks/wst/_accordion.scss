@@ -1,0 +1,84 @@
+/* ==========================================================================
+Accordion Block
+========================================================================== */
+.wp-block-wst-blocks-accordion {
+	width: 100%;
+}
+
+.wp-block-wst-blocks-accordion-item {
+	margin-top: -1px;
+	border-top: solid 1px var(--wp--custom--colors--gray-300);
+	border-bottom: solid 1px var(--wp--custom--colors--gray-300);
+
+	&:first-of-type {
+		border-top: none;
+	}
+
+	&:last-of-type {
+		border-bottom: none;
+	}
+
+
+	&__title,
+	&__trigger {
+		display: flex;
+		flex: 1;
+	}
+
+	&__title {
+		margin: 0;
+	}
+
+	&__trigger {
+		align-items: center;
+		justify-content: space-between;
+		padding: var(--wp--custom--spacings--m) 0;
+		background: transparent;
+		border: none;
+		border-radius: 0;
+		font-weight: var(--wp--custom--typography--headings--h-4-font-weight);
+		font-size: var(--wp--custom--typography--headings--h-4-font-size-desktop);
+		line-height: var(--wp--custom--typography--headings--h-4-line-height-desktop);
+		cursor: pointer;
+		transition: margin 150ms ease-out;
+
+		@include up-to-tablet-landscape {
+			font-size: var(--wp--custom--typography--headings--h-4-font-size-mobile);
+			line-height: var(--wp--custom--typography--headings--h-4-line-height-mobile);
+		}
+
+		&[aria-expanded="true"] {
+			margin-bottom: var(--wp--custom--spacings--xs);
+			outline: none;
+
+			.accordion-marker {
+
+				.icon-plus-minus {
+					background-image: url(map-get( $images, 'icon-minus'));
+				}
+			}
+		}
+
+		.accordion-marker {
+
+			.icon-plus-minus {
+				background-color: var(--wp--custom--colors--yellow);
+				transform: rotate(0deg);
+				transition: transform 0.2s ease;
+				width: 30px;
+				height: 30px;
+				display: block;
+				background-image: url(map-get( $images, 'icon-plus'));
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 15px;
+				border-radius: 50%;
+			}
+		}
+	}
+
+	&__content {
+		margin: calc(var(--wp--custom--spacings--s) * -1) 0 var(--wp--custom--spacings--m);
+	}
+
+}

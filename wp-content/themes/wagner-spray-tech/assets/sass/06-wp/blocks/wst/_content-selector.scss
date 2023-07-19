@@ -1,0 +1,75 @@
+/* ==========================================================================
+Content Selector Container Block
+========================================================================== */
+.wst-blocks-content-selector {
+	max-width: 100%;
+	position: relative;
+
+	// Carousel layout
+	&.wst-blocks-content-selector--carousel {
+		position: relative;
+	}
+
+	.glide__arrow {
+		position: absolute;
+		top: 50%;
+		left: -25px;
+		transform: translateY(-50%);
+		border: none;
+		appearance: none;
+		background-color: var(--wp--custom--colors--gray-200);
+		border-radius: 50% 50%;
+		width: 50px;
+		height: 50px;
+
+		&.glide__arrow--right {
+			background-color: var(--wp--custom--colors--black);
+			right: -25px;
+			left: auto;
+		}
+	}
+
+	// Grid layout
+	&.wst-blocks-content-selector--grid {
+		display: grid;
+		grid-gap: var(--wp--custom--spacings--s);
+
+		&[data-grid-columns] {
+
+			@include for-tablet-portrait-up {
+
+				@include grid_columns(2);
+			}
+		}
+
+		$columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+
+		@each $column in $columns {
+
+			&[data-grid-columns="#{$column}"] {
+
+				@include for-tablet-landscape-up {
+
+					@include grid_columns($column);
+				}
+			}
+		}
+	}
+}
+
+// Gutenberg editor
+.wp-block-wst-content-selector .block-editor-block-list__layout {
+
+	@extend %grid-posts;
+	@extend %grid-posts__3;
+}
+
+$columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+
+@each $column in $columns {
+
+	.wp-block-wst-content-selector__grid[data-grid-columns="#{$column}"] .block-editor-block-list__layout {
+
+		@include grid_columns($column);
+	}
+}

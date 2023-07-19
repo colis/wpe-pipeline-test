@@ -1,0 +1,99 @@
+//------------------------------------
+// Support Center Block.
+//------------------------------------
+.wst-support-center {
+
+	&__row {
+
+		@include up-to-tablet-landscape {
+			flex-direction: column;
+		}
+	}
+
+	&__card {
+
+		display: grid;
+		box-sizing: content-box;
+		padding: var(--wp--custom--spacings--s) 0 0 0;
+
+		@include for-desktop-up {
+			grid-template-rows: min-content 1fr min-content;
+			grid-template-columns: 1fr calc(var(--wp--custom--spacings--xxxxxxl) * 2);
+		}
+
+		> * {
+
+			margin: 0;
+			padding: var(--wp--custom--spacings--s) var(--wp--custom--spacings--m);
+
+			@include for-desktop-up {
+				grid-column: auto / span 2;
+			}
+
+		}
+
+		.wp-block-image {
+
+			height: 100%;
+			width: 100%;
+			padding: 0;
+
+			@include for-desktop-up {
+				grid-column: 2 / span 1;
+			}
+
+			img {
+
+				@include fit-image;
+				object-fit: contain;
+			}
+		}
+
+
+		.link {
+			text-decoration: none;
+			position: relative;
+			margin: auto auto var(--wp--custom--spacings--m) var(--wp--custom--spacings--m);
+			padding: 0;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+
+			@include for-desktop-up {
+				grid-column: 1 / span 1;
+			}
+
+			a {
+				text-decoration: none;
+				font-weight: 700;
+
+				&:hover {
+					color: var(--wp--custom--colors--black);
+					text-decoration: underline;
+				}
+			}
+
+			&:hover {
+				color: var(--wp--custom--colors--black);
+				text-decoration: underline;
+
+				&::after {
+					position: relative;
+					left: var(--wp--custom--spacings--xs);
+				}
+			}
+
+			&::after {
+				content: "";
+				background-image: url(map-get($images, 'icon-arrow-circle'));
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				display: block;
+				height: var(--wp--custom--spacings--l);
+				width: var(--wp--custom--spacings--m);
+				margin-left: var(--wp--custom--spacings--xs);
+			}
+		}
+	}
+}

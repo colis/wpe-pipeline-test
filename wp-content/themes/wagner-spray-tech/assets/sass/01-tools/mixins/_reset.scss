@@ -1,0 +1,63 @@
+/* ==========================================================================
+RESET
+========================================================================== */
+
+/**
+ * Reset all padding and margin
+ */
+@mixin reset_all {
+	margin: 0;
+	padding: 0;
+}
+
+/**
+ * This mixin can be used to reset the appearance of a list element (ul, ol)
+ */
+@mixin reset_list_style {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/**
+ * This mixin can be used to reset the appearance
+ * of an input[type="submit"] element
+ */
+@mixin reset_appearance {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+/**
+ * This mixin can be used to reset the appearance of a <button> element
+ */
+@mixin reset_button_element {
+	appearance: none;
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+/**
+ * This mixin can be used to remove the default anchor styling.
+ */
+@mixin reset_link_style {
+	padding: 0;
+
+	&:hover {
+		background: none;
+	}
+}
+
+/**
+ * This mixin can be used to remove the default list styling.
+ */
+@mixin reset_list_item {
+	margin: 0;
+	padding-left: 0;
+
+	&::before {
+		display: none;
+	}
+}

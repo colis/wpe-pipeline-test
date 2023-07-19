@@ -1,0 +1,63 @@
+//------------------------------------
+// Experience Wagner Media Text Block.
+//------------------------------------
+.wst-experience-wagner {
+
+	background: var(--wp--custom--colors--black);
+	position: relative;
+
+	&.wp-block-media-text {
+		gap: 0;
+	}
+
+	&__icon:not(.block-editor-block-list__block) {
+
+		width: var(--wp--custom--spacings--xxxxxxl);
+		display: block;
+		position: absolute;
+		top: 25%;
+		left: calc(50% - var(--wp--custom--spacings--xxl));
+
+		@include for-tablet-portrait-up {
+			width: calc(var(--wp--custom--spacings--xxxxxxl) * 3);
+			top: calc(100% - calc(var(--wp--custom--spacings--xxxxxxl) * 2.2));
+			left: calc(25% - calc(var(--wp--custom--spacings--xxxxxxl) * 1.5));
+		}
+
+	}
+
+	&__icon.block-editor-block-list__block {
+		margin: var(--wp--custom--spacings--xxl) auto auto auto;
+
+		&::after {
+			content: "This image will be displayed over the background image.";
+			color: var(--wp--custom--colors--white);
+			font-size: var(--wp--custom--font-sizes--xxs);
+			font-style: italic;
+			display: block;
+			margin-top: var(--wp--custom--spacings--s);
+		}
+
+	}
+
+	.wp-block-media-text__media {
+
+		@include for-tablet-portrait-up {
+			clip-path: polygon(0% 0%, 0% 110%, 100% 110%, 90% 0);
+		}
+
+	}
+
+	.wp-block-media-text__content {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		padding: var(--wp--custom--spacings--m);
+
+		@include for-tablet-portrait-up {
+			padding: var(--wp--custom--spacings--xxl)  var(--wp--custom--spacings--xxxxxl);
+
+		}
+
+	}
+}

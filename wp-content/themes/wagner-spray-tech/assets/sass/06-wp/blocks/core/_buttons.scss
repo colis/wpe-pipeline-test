@@ -1,0 +1,66 @@
+/* ==========================================================================
+BUTTONS BLOCK
+========================================================================== */
+
+// Default Style: Fill.
+.wp-block-button__link {
+
+	@include button;
+
+	// Style: Fill Secondary.
+	&.has-black-background-color {
+
+		@include button_fill_secondary;
+	}
+
+	// Style: Fill Tertiary.
+	&.has-white-background-color {
+
+		@include button_fill_tertiary;
+	}
+}
+
+.wp-block-button {
+
+	// Style: Fill Icon.
+	&.is-style-fill-icon {
+
+		.wp-block-button__link {
+
+			@include button_fill_icon;
+
+			// Style: Fill Icon Secondary.
+			&.has-white-background-color {
+
+				@include button_fill_icon_secondary;
+			}
+		}
+	}
+
+	// Style: Outline.
+	&.is-style-outline {
+
+		.wp-block-button__link {
+
+			@include button_outline;
+		}
+	}
+
+	// Style: Outline Icon.
+	&.is-style-outline-icon {
+
+		.wp-block-button__link {
+
+			@include button_outline_icon;
+		}
+	}
+
+	// Style: Text Icon.
+	&.is-style-text-icon {
+
+		.wp-block-button__link {
+
+			@include button_text_icon;
+		}
+	}
+}

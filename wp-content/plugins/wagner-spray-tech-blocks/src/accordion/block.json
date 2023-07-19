@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wst-blocks/accordion",
+	"title": "Accordion",
+	"category": "wst-blocks",
+	"description": "Organize content within collapsible accordion items.",
+	"keywords": [ "accordion", "faq" ],
+	"textdomain": "wagner-spray-tech-blocks",
+	"supports": {
+		"align": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

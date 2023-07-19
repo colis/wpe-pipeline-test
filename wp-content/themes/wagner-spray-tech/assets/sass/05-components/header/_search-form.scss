@@ -1,0 +1,99 @@
+/* ==========================================================================
+SEARCH FORM
+========================================================================== */
+
+.c-site-header__search {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	visibility: hidden;
+
+	.o-container {
+
+		@include up-to-tablet-landscape {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+.c-site-header__search--form {
+	padding: var(--wp--custom--spacings--m) var(--wp--custom--spacings--l);
+	width: 100%;
+	background-color: var(--wp--custom--colors--yellow);
+	border-top: solid 1px var(--wp--custom--colors--black);
+	box-shadow: 0 3px 8px -4px var(--wp--custom--colors--black-rgba-05);
+	transition: top 0.1s ease-in-out;
+
+	@include for-tablet-landscape-up {
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+
+	@include up-to-tablet-landscape {
+		padding: var(--wp--custom--spacings--s) var(--wp--custom--spacings--m);
+	}
+}
+
+.c-search-form {
+	display: flex;
+
+	label {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+	}
+}
+
+.search-field {
+	width: 100%;
+	font-weight: 500;
+	color: var(--wp--custom--colors--black);
+	border: solid 2px var(--wp--custom--colors--white);
+	border-right: none;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+
+	&::placeholder {
+		color: var(--wp--custom--colors--black-rgba-05);
+	}
+
+	&:focus {
+
+		@include default_transition;
+		border-color: var(--wp--custom--colors--black);
+		outline: none;
+	}
+}
+
+.search-submit {
+
+	@include default_transition(color);
+	display: flex !important;
+	align-items: center;
+	padding: 0 var(--wp--custom--spacings--s);
+	height: 42px;
+	font-size: var(--wp--preset--font-size--small);
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	background-color: var(--wp--custom--colors--black);
+	color: var(--wp--custom--colors--white);
+
+	&:hover,
+	&:focus {
+		color: var(--wp--custom--colors--black);
+	}
+}
+
+// Header Search toggled.
+
+body.header-search-open {
+
+	.c-site-header__search {
+		top: var(--header-height);
+		visibility: visible;
+		transition: top 0.1s ease-in-out;
+	}
+}

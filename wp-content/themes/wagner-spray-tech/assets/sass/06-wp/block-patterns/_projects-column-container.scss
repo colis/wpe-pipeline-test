@@ -1,0 +1,47 @@
+//------------------------------------
+// Product Column Container.
+//------------------------------------
+.projects-column-container {
+	padding: var(--wp--custom--spacings--xxxxxxl) 0;
+
+	.projects-column-row {
+		align-items: stretch;
+
+		.projects-column-card {
+			flex: 1;
+			justify-content: space-between;
+
+			> .wp-block-heading,
+			.projects-column-card__meta {
+				padding: 0 var(--wp--custom--spacings--m);
+			}
+
+			> .wp-block-heading {
+				min-height: 1.5rem;
+			}
+
+			.projects-column-card__meta {
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+
+				.wp-block-group {
+					flex: 50%;
+					gap: 0;
+					margin-bottom: 1rem;
+				}
+
+				.wp-block-heading {
+					font-size: var(--wp--preset--font-size--xx-small);
+					text-transform: uppercase;
+					color: var(--wp--preset--color--yellow);
+					margin-bottom: var(--wp--custom--spacings-xxs);
+				}
+
+				p {
+					font-size: var(--wp--preset--font-size--small);
+				}
+			}
+		}
+	}
+}

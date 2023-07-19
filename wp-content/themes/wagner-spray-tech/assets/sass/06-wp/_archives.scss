@@ -1,0 +1,19 @@
+/* ==========================================================================
+ARCHIVES
+========================================================================== */
+
+.c-archive-main {
+	padding-bottom: spacing(8);
+}
+
+.c-archive-header {
+	padding: var(--wp--custom--spacings--xxl) 0;
+
+	.page-title {
+		margin-bottom: 0;
+
+		+ .archive-description {
+			margin-top: var(--wp--custom--spacings--s);
+		}
+	}
+}

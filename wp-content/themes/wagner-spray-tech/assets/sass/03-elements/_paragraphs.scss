@@ -1,0 +1,72 @@
+/* ==========================================================================
+PARAGRAPHS
+========================================================================== */
+
+:root {
+	--paragraph-margin: 0 0 20px;
+}
+
+p {
+	margin: var(--paragraph-margin);
+
+	// If the element is empty.
+	&:empty {
+		display: none;
+	}
+
+	// If the element is the last child.
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	// If the element has a background.
+	&.has-background {
+		padding: var(--wp--custom--spacings--s) var(--wp--custom--spacings--m);
+	}
+}
+
+strong {
+	font-weight: 700;
+}
+
+mark {
+	background-color: transparent;
+}
+
+// Font sizes.
+
+.has-large-font-size {
+
+	@include up-to-tablet-landscape {
+		font-size: var(--wp--preset--font-size--base) !important;
+	}
+}
+
+.has-x-large-font-size {
+
+	@include up-to-tablet-landscape {
+		font-size: var(--wp--preset--font-size--medium) !important;
+	}
+}
+
+.has-xx-large-font-size {
+
+	@include up-to-tablet-landscape {
+		font-size: var(--wp--preset--font-size--large) !important;
+	}
+}
+
+.has-xxx-large-font-size {
+
+	@include up-to-tablet-landscape {
+		font-size: var(--wp--preset--font-size--x-large) !important;
+	}
+}
+
+.has-xxxx-large-font-size {
+	line-height: 1.4;
+
+	@include up-to-tablet-landscape {
+		font-size: var(--wp--preset--font-size--xx-large) !important;
+	}
+}

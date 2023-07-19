@@ -1,0 +1,87 @@
+/* ==========================================================================
+PRODUCT PAGE HERO GALLERY THUMBNAILS
+========================================================================== */
+.c-page-hero__product .c-post-hero__thumbnails {
+
+	padding: var(--wp--custom--spacings--l) 0;
+
+	@include for-tablet-landscape-up {
+		padding: 0;
+		position: relative;
+	}
+
+	.thumbnails-nav {
+
+		display: none;
+
+		@include for-tablet-landscape-up {
+
+			@include default_transition(opacity);
+			display: block;
+			position: absolute;
+			cursor: pointer;
+			background-image: url(map-get($images, 'icon-chevron-down'));
+			background-repeat: no-repeat;
+			width: var(--wp--preset--font-size--large);
+			height: var(--wp--preset--font-size--large);
+			background-size: contain;
+			opacity: 0.25;
+			left: 40%;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&[data-direction="prev"] {
+			transform: rotate(180deg);
+			bottom: 102%;
+		}
+
+		&[data-direction="next"] {
+			top: 102%;
+		}
+	}
+
+	ul {
+
+		@include reset_list_style;
+		overflow: hidden;
+
+		@include for-tablet-landscape-up {
+			height: $product_image_container_height;
+			scroll-snap-type: y mandatory;
+			overflow-y: hidden;
+		}
+
+		li {
+
+			@include reset_list_item;
+
+			@include for-tablet-landscape-up {
+				scroll-snap-align: start;
+
+			}
+
+			img {
+
+				@include for-tablet-landscape-up {
+
+					@include default_transition(opacity);
+					width: 100%;
+					object-fit: contain;
+					border: 2px solid transparent;
+					cursor: pointer;
+					opacity: 0.7;
+
+					&:hover,
+					&:focus,
+					&.current {
+						border-color: var(--wp--custom--colors--black);
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+/* ==========================================================================
+PRODUCT PAGE HERO GALLERY
+========================================================================== */
+.c-page-hero__product .c-post-hero__gallery {
+
+	display: none;
+
+	@include for-tablet-landscape-up {
+		height: $product_image_container_height;
+		display: grid;
+		grid-column-gap: var(--wp--custom--spacings--l);
+		grid-template-columns: 15% 1fr;
+		grid-template-areas: "thumbnails featured-image";
+		align-items: center;
+		grid-area: product-gallery;
+	}
+
+	.featured-image {
+
+		@include flex-center;
+		margin-bottom: 0;
+		grid-area: featured-image;
+
+		img {
+			width: 35rem;
+			object-fit: contain;
+		}
+	}
+}

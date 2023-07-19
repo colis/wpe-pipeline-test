@@ -1,0 +1,88 @@
+/* ==========================================================================
+Testimonials Card
+========================================================================== */
+.wst-blocks-testimonial-card {
+	display: grid;
+	grid-template-rows: 10% 1fr 20% 10%;
+	background-color: var(--wp--custom--colors--gray-200);
+	color: var(--wp--custom--colors--black);
+	padding: var(--wp--custom--spacings--m);
+	overflow: hidden;
+	position: relative;
+	height: 100%;
+	clip-path: polygon(0 0, 100% 0%, 100% 75%, 75% 100%, 0 100%);
+
+	&.is-theme-dark {
+
+		* {
+			color: var(--wp--custom--colors--white);
+		}
+	}
+
+	* {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__testimonial {
+		font-size: var(--wp--preset--font-size--medium);
+		margin: var(--wp--custom--spacings--s);
+		text-align: center;
+		grid-row: 2 / span 1;
+		align-self: center;
+		justify-self: center;
+	}
+
+	&__subtitle {
+		font-size: var(--wp--preset--font-size--small);
+		margin-bottom: var(--wp--custom--spacings--s);
+		grid-row: 1 / span 1;
+		align-self: center;
+		justify-self: center;
+	}
+
+	&__cite {
+		font-size: var(--wp--preset--font-size--small);
+		margin-bottom: var(--wp--custom--spacings--s);
+		grid-row: 4 / span 1;
+		align-self: center;
+		justify-self: center;
+		font-weight: 700;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__icon {
+		grid-row: 3 / span 1;
+		align-self: center;
+		height: 100%;
+
+		img {
+			height: 100%;
+			object-fit: contain;
+			margin: auto;
+		}
+	}
+
+	&__background_image {
+
+		@include absolute-full;
+		z-index: 1;
+
+		img {
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
+
+.block-editor-block-list__layout .wst-blocks-testimonial-card {
+
+	* {
+		pointer-events: none;
+	}
+}

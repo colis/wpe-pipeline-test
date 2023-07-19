@@ -1,0 +1,3 @@
+.wp-block-wst-content-selector--dynamic * {
+	pointer-events: none;
+}

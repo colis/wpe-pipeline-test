@@ -1,0 +1,57 @@
+/* ==========================================================================
+MEDIA & TEXT BLOCK
+========================================================================== */
+
+.wp-block-media-text {
+
+	// Has no background.
+	&:not(.has-background) {
+		gap: var(--wp--custom--spacings--xxxxl);
+
+		@include up-to-tablet-landscape {
+			gap: var(--wp--custom--spacings--xl);
+		}
+
+		@include up-to-gutenberg-mobile {
+			gap: var(--wp--custom--spacings--m);
+		}
+	}
+
+	// Has background.
+	&.has-background {
+
+		.wp-block-media-text__content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: var(--wp--custom--spacings--xxxxl);
+			min-height: 450px;
+
+			@include up-to-tablet-landscape {
+				padding: var(--wp--custom--spacings--xl);
+			}
+
+			@include up-to-gutenberg-mobile {
+				padding: var(--wp--custom--spacings--m);
+				min-height: auto;
+			}
+		}
+	}
+
+	.wp-block-media-text__content {
+		padding: 0;
+	}
+
+	// Sibling Media & Text blocks.
+	+ .wp-block-media-text {
+		margin-top: spacing(8);
+
+		@include up-to-tablet-landscape {
+			margin-top: var(--wp--custom--spacings--xxl);
+		}
+
+		@include up-to-gutenberg-mobile {
+			margin-top: var(--wp--custom--spacings--xl);
+		}
+	}
+}

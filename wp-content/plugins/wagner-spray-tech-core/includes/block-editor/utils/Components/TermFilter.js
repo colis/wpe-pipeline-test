@@ -8,22 +8,22 @@ import { getIdFromToken } from '../getIdFromToken';
 const MAX_TERM_SUGGESTIONS = 20;
 const MAX_TOKENS = 1;
 
-export default function ({
+export default function ( {
 	attributes,
 	label,
 	setAttributes,
 	termAttribute,
 	taxonomyName,
-}) {
-	const { [termAttribute]: termAttr } = attributes;
+} ) {
+	const { [ termAttribute ]: termAttr } = attributes;
 
-	const [searchString, setSearchString] = useState('');
-	const debouncedSearch = useDebounce(setSearchString, 1000);
+	const [ searchString, setSearchString ] = useState( '' );
+	const debouncedSearch = useDebounce( setSearchString, 1000 );
 
 	// Retrieve terms from the DB.
 	const { terms, hasResolved } = useSelect(
-		(select) => {
-			if (!searchString) {
+		( select ) => {
+			if ( ! searchString ) {
 				return {
 					terms: [],
 					hasResolved: true,
@@ -37,42 +37,46 @@ export default function ({
 				_fields: 'id,name',
 			};
 
-			const selectorArgs = ['taxonomy', taxonomyName, query];
+			const selectorArgs = [ 'taxonomy', taxonomyName, query ];
 
 			return {
-				terms: select(coreDataStore).getEntityRecords(...selectorArgs),
-				hasResolved: select(coreDataStore).hasFinishedResolution(
+				terms: select( coreDataStore ).getEntityRecords(
+					...selectorArgs
+				),
+				hasResolved: select( coreDataStore ).hasFinishedResolution(
 					'getEntityRecords',
 					selectorArgs
 				),
 			};
 		},
-		[searchString]
+		[ searchString ]
 	);
 
-	const suggestions = useMemo(() => {
-		return (terms ?? []).map((term) => `${term.name} [${term.id}]`);
-	}, [terms]);
+	const suggestions = useMemo( () => {
+		return ( terms ?? [] ).map(
+			( term ) => `${ term.name } [${ term.id }]`
+		);
+	}, [ terms ] );
 
-	const onChange = (newTerm) => {
-		setAttributes({
-			[termAttribute]: {
-				id: newTerm[0] ? getIdFromToken(newTerm[0]) : 0,
-				name: newTerm[0] || '',
+	const onChange = ( newTerm ) => {
+		setAttributes( {
+			[ termAttribute ]: {
+				id: newTerm[ 0 ] ? getIdFromToken( newTerm[ 0 ] ) : 0,
+				name: newTerm[ 0 ] || '',
 			},
-		});
+		} );
 	};
 
 	return (
 		<>
 			<FormTokenField
-				label={label}
-				maxLength={MAX_TOKENS}
-				maxSuggestions={MAX_TERM_SUGGESTIONS}
-				onChange={onChange}
-				onInputChange={debouncedSearch}
-				suggestions={hasResolved ? suggestions : []}
-				value={termAttr?.name ? [termAttr.name] : []}
+				label={ label }
+				maxLength={ MAX_TOKENS }
+				maxSuggestions={ MAX_TERM_SUGGESTIONS }
+				onChange={ onChange }
+				onInputChange={ debouncedSearch }
+				suggestions={ hasResolved ? suggestions : [] }
+				value={ termAttr?.name ? [ termAttr.name ] : [] }
 			/>
 		</>
 	);

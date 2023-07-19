@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wst-blocks/accordion-item",
+	"title": "Accordion Item",
+	"category": "wst-blocks",
+	"description": "Add collapsable accordion items to accordions.",
+	"textdomain": "wagner-spray-tech-blocks",
+	"parent": [ "wst-blocks/accordion" ],
+	"attributes": {
+		"key": {
+			"type": "string",
+			"default": ""
+		},
+		"title": {
+			"type": "string",
+			"selector": "h4"
+		},
+		"open": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"align": false
+	},
+	"editorScript": "file:./index.js"
+}

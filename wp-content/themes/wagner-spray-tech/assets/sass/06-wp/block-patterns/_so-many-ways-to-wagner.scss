@@ -1,0 +1,48 @@
+//------------------------------------
+// So Many Ways to Wagner.
+//------------------------------------
+.so-many-ways-to-wagner {
+	padding: 100px 0;
+
+	.wp-block-getwid-tabs__nav-links {
+		position: absolute;
+		z-index: 9;
+		top: 30px;
+		left: 50%;
+		transform: translateX(-50%);
+		background: var(--wp--custom--colors--white);
+		border-radius: 100px;
+		padding: 6px;
+
+		.wp-block-getwid-tabs__nav-link {
+			margin-top: 0 !important;
+			border: none;
+
+			a {
+				color: var(--wp--custom--colors--black);
+				padding: 2px 40px !important;
+				font-weight: 600;
+
+				&:hover {
+					color: #ffcb00;
+				}
+			}
+
+			&.ui-tabs-active {
+				border: none;
+				padding: 0;
+				background: #ffcb00;
+				border-radius: 100px;
+
+				a {
+					color: var(--wp--custom--colors--black);
+				}
+			}
+		}
+	}
+
+	.wp-block-getwid-tabs__tab-content {
+		padding: 0;
+		border: none;
+	}
+}

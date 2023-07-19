@@ -1,0 +1,40 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wst-blocks/related-faq-card",
+	"title": "FAQ Card",
+	"category": "wst-blocks",
+	"icon": "index-card",
+	"description": "Related FAQ Card.",
+	"keywords": [ "faq", "card", "content" ],
+	"textdomain": "wagner-spray-tech-blocks",
+	"parent": [ "wst-blocks/content-selector" ],
+	"attributes": {
+		"contentSelectorId": {
+			"type": "string",
+			"default": ""
+		},
+		"contentSelectorIndex": {
+			"type": "number",
+			"default": 0
+		},
+		"selectedPostType": {
+			"type": "string",
+			"default": ""
+		},
+		"post": {
+			"type": "object",
+			"default": {}
+		},
+		"layout": {
+			"type": "string",
+			"default": "grid"
+		}
+	},
+	"supports": {
+		"align": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"render": "file:./render.php"
+}

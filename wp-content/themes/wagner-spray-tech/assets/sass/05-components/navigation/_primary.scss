@@ -1,0 +1,326 @@
+/* ==========================================================================
+PRIMARY NAVIGATION
+========================================================================== */
+
+/* Desktop Devices */
+
+.primary-navigation,
+.primary-navigation .menu-wrapper {
+	display: flex;
+}
+
+.primary-navigation {
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+
+	@include up-to-tablet-landscape {
+		position: absolute;
+		height: 0;
+	}
+
+	.primary-menu-container {
+
+		@include up-to-tablet-landscape {
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+			transform: translateY(var(--wp--custom--spacings--s));
+		}
+	}
+
+	ul {
+
+		@include reset_list_style;
+	}
+
+	.menu-wrapper {
+		align-items: flex-end;
+
+		@include up-to-tablet-landscape {
+			flex-wrap: wrap;
+		}
+
+		&,
+		> .menu-item {
+			justify-content: center;
+		}
+	}
+
+	// All menu items.
+
+	.menu-item {
+		display: block;
+		position: relative;
+
+		&:hover,
+		&:focus,
+		&:active {
+
+			> a {
+				color: var(--wp--custom--colors--gray);
+
+				+ .menu-item-toggle path {
+					fill: var(--wp--custom--colors--gray);
+				}
+			}
+		}
+
+		// All menu links.
+		a {
+			font-size: 1.25rem;
+			font-weight: 800;
+			text-decoration: none;
+			text-transform: uppercase;
+			color: var(--wp--custom--colors--black);
+		}
+
+		// Parent menu item arrow icon.
+
+		&.menu-item-has-children {
+
+			.menu-item-toggle {
+				display: block;
+			}
+		}
+	}
+
+	// Top-level menu items.
+
+	.menu-wrapper > .menu-item {
+
+		@include for-tablet-landscape-up {
+			margin-left: var(--wp--custom--spacings--m);
+			margin-right: var(--wp--custom--spacings--m);
+		}
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		// Parent menu links.
+		> a {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			padding-top: var(--wp--custom--spacings--xs);
+			padding-bottom: var(--wp--custom--spacings--xs);
+			text-align: center;
+			position: relative;
+
+			@include for-tablet-landscape-up {
+				padding-top: 26px;
+				padding-bottom: 26px;
+			}
+
+			&::before {
+
+				@include default_transition(width);
+				content: "";
+				display: none;
+				height: 5px;
+				width: 0;
+				background-color: var(--wp--custom--colors--black);
+				position: absolute;
+				bottom: 0;
+				left: 0;
+
+				@include for-tablet-landscape-up {
+					display: block;
+				}
+			}
+
+			&::after {
+
+				@include default_transition(transform);
+				content: "";
+				display: block;
+				height: 6px;
+				width: 9px;
+				background-image: url(map-get($images, 'icon-nav-chevron'));
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+			}
+
+			&:hover,
+			&:focus,
+			&:active,
+			&[aria-expanded="true"] {
+
+				&::before {
+
+					@include default_transition(width);
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+// Display the sub menu on menu item hover / toggle.
+
+.primary-navigation .menu-wrapper > .menu-item.open,
+body:not(.primary-navigation-open) .menu-wrapper > .menu-item:hover,
+body:not(.primary-navigation-open) .menu-wrapper > .menu-item:focus,
+body:not(.primary-navigation-open) .menu-wrapper > .menu-item:active {
+
+	> a {
+
+		&::before {
+
+			@include default_transition(width);
+			width: 100%;
+		}
+
+		&::after {
+
+			@include default_transition(transform);
+			transform: rotate(180deg);
+		}
+	}
+
+	> .sub-menu {
+
+		@include up-to-tablet-landscape {
+			display: block;
+		}
+
+		@include for-tablet-landscape-up {
+			opacity: 1;
+			visibility: visible;
+			left: calc(var(--wp--custom--spacings--m) * -1);
+			transition: opacity 0.2s 0s ease, visibility 0s 0s ease, left 0s 0s ease;
+		}
+	}
+}
+
+// Sub menus.
+
+.primary-navigation .menu-wrapper > .menu-item > .sub-menu {
+	display: none;
+
+	@include for-tablet-landscape-up {
+		padding: 14px var(--wp--custom--spacings--m);
+		background-color: var(--wp--custom--colors--white);
+		border: solid 1px var(--wp--custom--colors--black-01);
+		border-top: none;
+		border-radius: 0 0 3px 3px;
+		box-shadow: 0 2px 8px -3px var(--wp--custom--colors--black-015);
+		min-width: 300px;
+		position: absolute;
+		top: 100%;
+		left: calc(var(--wp--custom--spacings--m) * -1);
+		z-index: 2;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.2s 0.2s ease, visibility 0s 0.5s ease;
+		display: flex;
+		flex-direction: column;
+	}
+
+	// Second-level menu items.
+	> .menu-item {
+
+		&.new-column-break {
+			// Need to put this on new column.
+		}
+
+		&.heavy > a {
+			font-size: 1.25rem;
+			font-weight: 800;
+			text-transform: uppercase;
+		}
+	}
+
+	// All sub menu items.
+	.menu-item {
+
+		+ .menu-item {
+			margin-top: var(--wp--custom--spacings--xs);
+		}
+
+		+ .menu-item.heavy {
+			margin-top: 14px;
+		}
+
+		a {
+			font-size: 0.9rem;
+			font-weight: 500;
+			text-decoration: none;
+			color: var(--wp--custom--colors--black);
+			text-transform: none;
+
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: underline;
+			}
+		}
+
+		span {
+			display: block;
+			font-size: 0.8em;
+		}
+
+		// Third-level sub menus.
+		.sub-menu {
+			margin-bottom: var(--wp--custom--spacings--xs);
+
+			.menu-item {
+				margin-top: var(--wp--custom--spacings--xs);
+			}
+		}
+	}
+}
+
+
+/* Mobile Devices */
+
+body.primary-navigation-open {
+
+	.menu-wrapper,
+	.menu-item {
+		justify-content: space-between;
+	}
+
+	// All menu items.
+
+	.menu-item {
+		flex-wrap: wrap;
+		width: 100%;
+
+		// Parent menu items.
+		&.menu-item-has-children {
+
+			a {
+				justify-content: space-between;
+				width: 100%;
+			}
+		}
+	}
+
+	// Top-level menu items.
+
+	.menu-wrapper > .menu-item {
+		padding: var(--wp--custom--spacings--xs) 0;
+
+		// Sibling top-level menu items.
+		+ .menu-item {
+			border-top: solid 1px var(--wp--custom--colors--black-rgba-0125);
+		}
+	}
+
+	// Sub menu items.
+
+	.c-site-header .primary-navigation .sub-menu {
+		padding: 4px 0 var(--wp--custom--spacings--xs) 0;
+		min-width: unset;
+		flex-basis: 100%;
+
+		// Menu links.
+		a {
+			font-size: 1.125rem;
+		}
+	}
+}

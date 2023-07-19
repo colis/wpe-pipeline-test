@@ -1,0 +1,91 @@
+//------------------------------------
+// Import settings and tools.
+// (e.g. variables, mixins, functions, etc..)
+//------------------------------------
+
+@import "import_all_settings";
+@import "@glidejs/glide/src/assets/sass/glide.core";
+
+/*------------------------------------
+Generic
+------------------------------------*/
+
+@import "02-generic/normalize";
+@import "02-generic/body";
+@import "02-generic/box-sizing";
+@import "02-generic/fonts";
+@import "02-generic/grid";
+@import "02-generic/spacing";
+
+/*------------------------------------
+Elements
+- only simple HTML tags can go here
+------------------------------------*/
+
+@import "03-elements/alignment";
+@import "03-elements/buttons";
+@import "03-elements/captions";
+@import "03-elements/forms";
+@import "03-elements/headings";
+@import "03-elements/iframe";
+@import "03-elements/images";
+@import "03-elements/lists";
+@import "03-elements/paragraphs";
+@import "03-elements/tables";
+
+/*------------------------------------
+Objects
+- must be prefixed with `o-*`
+------------------------------------*/
+
+@import "04-objects/container";
+@import "04-objects/social-share";
+@import "04-objects/icons";
+
+/*------------------------------------
+Components
+- must be prefixed with `c-*`
+------------------------------------*/
+
+@import "05-components/breadcrumbs";
+@import "05-components/card";
+@import "05-components/comments";
+@import "05-components/footer";
+@import "05-components/forms";
+@import "05-components/header";
+@import "05-components/hero";
+@import "05-components/layout";
+@import "05-components/navigation";
+@import "05-components/pagination";
+@import "05-components/search-filter";
+@import "05-components/sidebar";
+@import "05-components/where-to-buy";
+@import "05-components/product-accordion";
+
+/*------------------------------------
+WP
+- In this section you should add any relevant file that overrides
+- a specific WordPress component (e.g. block, plugin, etc..)
+------------------------------------*/
+
+@import "06-wp/archives";
+@import "06-wp/blocks";
+@import "06-wp/pages";
+@import "06-wp/singles";
+@import "06-wp/block-patterns";
+@import "06-wp/reusable-blocks";
+
+/*------------------------------------
+Utilities
+- ideally prefixed with `u-*`
+------------------------------------*/
+
+@import "07-utilities/accessibility";
+@import "07-utilities/typography";
+
+/*------------------------------------
+Trumps
+------------------------------------*/
+
+@import "08-trumps/shame";
+@import "08-trumps/temp";

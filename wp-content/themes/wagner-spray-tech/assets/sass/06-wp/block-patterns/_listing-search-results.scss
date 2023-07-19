@@ -1,0 +1,23 @@
+//------------------------------------
+// Listing Search Results Block Pattern.
+//------------------------------------
+
+.wst-listing-search-results {
+
+	.wp-block-columns {
+		--gap: var(--wp--custom--spacings--xxxxxl);
+
+		@include up-to-tablet-landscape {
+			--gap: var(--wp--custom--spacings--m);
+
+			flex-direction: column;
+		}
+	}
+
+	.wp-block-column {
+
+		@include up-to-tablet-landscape {
+			flex-basis: 100% !important; // Overriding inline CSS.
+		}
+	}
+}

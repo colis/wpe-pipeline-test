@@ -1,0 +1,78 @@
+/* ==========================================================================
+ICONS
+========================================================================== */
+.icon {
+	line-height: 1;
+
+	&.icon-arrow-left {
+
+		&::after {
+			content: "";
+			background-image: url(map-get($images, 'icon-arrow'));
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			display: inline-block;
+			height: 17px;
+			width: 20px;
+		}
+	}
+
+	&.icon-arrow-right {
+
+		&::after {
+			content: "";
+			background-image: url(map-get($images, 'icon-arrow'));
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			display: inline-block;
+			height: 17px;
+			width: 20px;
+			transform: rotate(180deg);
+		}
+	}
+
+	&.icon-arrow-white-left {
+
+		&::after {
+			content: "";
+			background-image: url(map-get($images, 'icon-arrow'));
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			display: inline-block;
+			height: 17px;
+			width: 20px;
+		}
+	}
+
+	&.icon-arrow-white-right {
+
+		&::after {
+			content: "";
+			background-image: url(map-get($images, 'icon-arrow-white'));
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			display: inline-block;
+			height: 17px;
+			width: 20px;
+			transform: rotate(180deg);
+		}
+	}
+
+	&.icon-droplet-white {
+
+		&::after {
+			content: "";
+			background-image: url(map-get($images, 'icon-droplet-white'));
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			display: inline-block;
+			height: 16px;
+			width: 12px;
+		}
+	}
+}

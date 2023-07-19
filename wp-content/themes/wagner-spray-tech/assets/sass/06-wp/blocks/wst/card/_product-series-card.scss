@@ -1,0 +1,52 @@
+/* ==========================================================================
+Product Series Card
+========================================================================== */
+.wst-blocks-product-series-card {
+	text-decoration: none;
+	white-space: normal;
+	height: 100%;
+
+	&:hover {
+		text-decoration: underline;
+		color: var(--wp--custom--colors--black);
+	}
+
+	article {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+		padding: var(--wp--custom--spacings--s);
+		border-radius: var(--wp--custom--spacings--xxs);
+		border-bottom: var(--wp--custom--spacings--xxs) solid var(--wp--custom--colors--gray-200);
+		background: var(--wp--custom--colors--gray-100);
+	}
+
+	&__title {
+		text-align: center;
+		font-size: var(--wp--preset--font-size--medium);
+		order: 2;
+	}
+
+	&_subtitle {
+		text-align: center;
+		font-size: var(--wp--preset--font-size--xx-small);
+		text-transform: uppercase;
+		order: 3;
+	}
+
+	&__image {
+		max-width: 125px;
+		margin: 0 auto var(--wp--custom--spacings--s) auto;
+		order: 1;
+
+	}
+
+}
+
+.block-editor-block-list__layout .wst-blocks-product-series-card {
+
+	* {
+		pointer-events: none;
+	}
+}

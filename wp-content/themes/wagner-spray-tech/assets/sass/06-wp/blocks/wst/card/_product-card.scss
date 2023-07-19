@@ -1,0 +1,47 @@
+/* ==========================================================================
+Product Card
+========================================================================== */
+.wst-blocks-product-card {
+	display: grid;
+	grid-template-rows: 50% 1fr 1fr min-content;
+	height: 100%;
+	row-gap: var(--wp--custom--spacings--xxs);
+
+	&__image {
+
+		@include reset-all;
+		@include flex-center;
+		grid-row: 1 / span 1;
+
+		img {
+			height: 100%;
+			object-fit: contain;
+			aspect-ratio: 1 / 1;
+		}
+
+	}
+
+	&__title {
+		font-size: var(--wp--preset--font-size--base);
+		text-transform: uppercase;
+		grid-row: 2 / span 1;
+	}
+
+	&__price {
+		font-size: var(--wp--preset--font-size--small);
+		font-weight: 600;
+		grid-row: 3 / span 1;
+	}
+
+	&__button {
+		grid-row: 4 / span 1;
+	}
+
+}
+
+.block-editor-block-list__layout .wst-blocks-product-card {
+
+	* {
+		pointer-events: none;
+	}
+}

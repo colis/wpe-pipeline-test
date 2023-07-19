@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wst-blocks/document-card",
+	"title": "Document Card",
+	"category": "wst-blocks",
+	"icon": "index-card",
+	"description": "Card for displaying documents.",
+	"keywords": [ "card", "content", "document" ],
+	"textdomain": "wagner-spray-tech-blocks",
+	"parent": [ "wst-blocks/content-selector" ],
+	"attributes": {
+		"selectedPostType": {
+			"type": "string",
+			"default": ""
+		},
+		"post": {
+			"type": "object",
+			"default": {}
+		}
+	},
+	"supports": {
+		"align": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"render": "file:./render.php"
+}

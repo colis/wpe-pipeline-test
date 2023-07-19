@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wst-blocks/quick-links",
+	"title": "Quick Section Links",
+	"category": "wst-blocks",
+	"icon": "admin-links",
+	"description": "Automatically create quick links to sections on the page.",
+	"textdomain": "wagner-spray-tech-blocks",
+	"attributes": {
+		"anchorCollection": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"supports": {
+		"align": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"viewScript": "file:./view.js"
+}

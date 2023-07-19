@@ -1,0 +1,20 @@
+//------------------------------------
+// Support QR Code Block.
+//------------------------------------
+.wst-support-qr-code {
+
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	grid-template-rows: min-content 1fr;
+	gap: var(--wp--custom--spacings--m);
+	padding: var(--wp--custom--spacings--l);
+
+	.wp-block-image {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 2;
+		align-self: center;
+		justify-self: center;
+
+	}
+
+}

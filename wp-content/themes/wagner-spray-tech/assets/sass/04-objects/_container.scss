@@ -1,0 +1,14 @@
+/* ==========================================================================
+GRID & CONTAINERS
+========================================================================== */
+
+.o-container {
+
+	@include grid_container;
+
+	/* The container for wrapping full width content blocks. */
+	&--negative {
+
+		@include grid_container__negative;
+	}
+}

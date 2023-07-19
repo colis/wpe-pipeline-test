@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wst-blocks/expand-show-more",
+	"title": "Expand/Show More",
+	"category": "wst-blocks",
+	"icon": "editor-insertmore",
+	"description": "Displays a small snippet of text which your visitors can expand.",
+	"keywords": [ "expand", "more" ],
+	"textdomain": "wagner-spray-tech-blocks",
+	"supports": {
+		"align": false
+	},
+	"editorScript": "file:./index.js"
+}

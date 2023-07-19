@@ -1,0 +1,124 @@
+/* ==========================================================================
+MEDIA QUERIES
+Based on https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
+Example usage:
+.my-class {
+  padding: 10px;
+  @include for-desktop-up {
+    padding: 20px;
+  }
+}
+========================================================================== */
+
+@mixin for-phone-up {
+
+	@media (min-width: #{$phone-min}) {
+		@content;
+	}
+}
+
+@mixin for-gutenberg-mobile-up {
+
+	@media (min-width: #{$gutenberg-mobile-min}) {
+		@content;
+	}
+}
+
+
+@mixin for-woo-mobile-up {
+
+	@media (min-width: #{$woo-mobile-min}) {
+		@content;
+	}
+}
+
+@mixin for-tablet-portrait-up {
+
+	@media (min-width: #{$tablet-portrait-min}) {
+		@content;
+	}
+}
+
+@mixin for-tablet-landscape-up {
+
+	@media (min-width: #{$tablet-landscape-min}) {
+		@content;
+	}
+}
+
+@mixin for-desktop-up {
+
+	@media (min-width: #{$desktop-min}) {
+		@content;
+	}
+}
+
+@mixin for-grid-up {
+
+	@media (min-width: #{$grid-width-min}) {
+		@content;
+	}
+}
+
+@mixin for-big-desktop-up {
+
+	@media (min-width: #{$big-desktop-min}) {
+		@content;
+	}
+}
+
+@mixin up-to-phone {
+
+	@media (max-width: #{$phone-max}) {
+		@content;
+	}
+}
+
+@mixin up-to-gutenberg-mobile {
+
+	@media (max-width: #{$gutenberg-mobile-max}) {
+		@content;
+	}
+}
+
+@mixin up-to-woo-mobile {
+
+	@media (max-width: #{$woo-mobile-max}) {
+		@content;
+	}
+}
+
+@mixin up-to-tablet-portrait {
+
+	@media (max-width: #{$tablet-portrait-max}) {
+		@content;
+	}
+}
+
+@mixin up-to-tablet-landscape {
+
+	@media (max-width: #{$tablet-landscape-max}) {
+		@content;
+	}
+}
+
+@mixin up-to-desktop {
+
+	@media (max-width: #{$desktop-max}) {
+		@content;
+	}
+}
+
+@mixin up-to-grid {
+
+	@media (max-width: #{$grid-width-max}) {
+		@content;
+	}
+}
+
+@mixin up-to-big-desktop {
+
+	@media (max-width: #{$big-desktop-max}) {
+		@content;
+	}
+}

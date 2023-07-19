@@ -1,0 +1,17 @@
+/* ==========================================================================
+QUOTE BLOCK
+========================================================================== */
+
+.wp-block-quote {
+	padding: var(--wp--custom--spacings--m);
+	border-width: 6px;
+
+	&.is-style-border-yellow {
+		border-color: var(--wp--custom--colors--yellow);
+	}
+
+	&.is-style-plain {
+		padding: 0;
+		background-color: transparent !important;
+	}
+}

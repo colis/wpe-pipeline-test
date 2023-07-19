@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wst-blocks/tab-item",
+	"title": "Tab Item",
+	"category": "wst-blocks",
+	"description": "Add a tab item to tabs.",
+	"textdomain": "wagner-spray-tech-blocks",
+	"parent": [ "wst-blocks/tabs" ],
+	"attributes": {
+		"title": {
+			"type": "string",
+			"selector": ".tab-title"
+		}
+	},
+	"supports": {
+		"align": false
+	},
+	"editorScript": "file:./index.js"
+}

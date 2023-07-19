@@ -1,0 +1,141 @@
+/* ==========================================================================
+PRODUCT PAGE HERO DETAILS
+========================================================================== */
+.c-post-hero__details {
+	grid-area: product-details;
+	display: flex;
+	flex-direction: column;
+
+	@include for-tablet-landscape-up {
+		display: block;
+	}
+
+	&__category-btn {
+		order: 1;
+
+		.wp-element-button {
+			padding: var(--wp--custom--spacings--xs) var(--wp--custom--spacings--s) var(--wp--custom--spacings--xxs) var(--wp--custom--spacings--s);
+			border-radius: 0 !important;
+			text-transform: uppercase;
+		}
+	}
+
+	&__title {
+		order: 2;
+	}
+
+	&__price {
+		order: 3;
+	}
+
+	&__gallery {
+		order: 4;
+
+		@include for-tablet-landscape-up {
+			display: none;
+		}
+
+		//// Mobile gallery is a slider.
+		.glide {
+			padding: var(--wp--custom--spacings--s) 0;
+
+			.glide__slide {
+
+				@include flex-center;
+
+				img {
+					width: 100%;
+					height: auto;
+					object-fit: contain;
+				}
+			}
+
+			.glide__bullets {
+
+
+				@include flex-center;
+				padding: var(--wp--custom--spacings--s) 0;
+
+				.glide__bullet {
+					background-color: var(--wp--custom--colors--black);
+					border: 2px solid var(--wp--custom--colors--black);
+					opacity: 1;
+					height: var(--wp--custom--spacings--s);
+					width: var(--wp--custom--spacings--s);
+					border-radius: 50%;
+					margin: 0 var(--wp--custom--spacings--xxs);
+
+					&.glide__bullet--active {
+						background-color: var(--wp--custom--colors--yellow);
+					}
+				}
+			}
+		}
+
+	}
+
+	&__buy-now {
+		order: 5;
+	}
+
+	&__support {
+		order: 7;
+	}
+
+	&__title,
+	&__price {
+
+		margin: var(--wp--custom--spacings--s) 0 0 0;
+
+		@include for-tablet-landscape-up {
+			margin: var(--wp--custom--spacings--m) 0;
+		}
+
+	}
+
+	&__features {
+		order: 6;
+		padding: var(--wp--custom--spacings--m) 0 0 0;
+
+		ul,
+		ol {
+
+			@include reset_list_style;
+		}
+
+		li {
+
+			@include reset_list_item;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			margin-bottom: var(--wp--custom--spacings--s);
+
+			&::before {
+
+				@include flex-center;
+				content: "";
+				background-size: 60%;
+				background-image: url(map-get($images, 'icon-check'));
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-color: var(--wp--custom--colors--yellow);
+				border-radius: 50%;
+				margin-right: var(--wp--custom--spacings--xs);
+				padding: var(--wp--custom--spacings--xs);
+
+			}
+		}
+	}
+
+	.product-buy-btn.is-fixed {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		.wp-element-button {
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,29 @@
+//------------------------------------
+// Product Categories.
+//------------------------------------
+.wst-product-categories {
+
+	&__card {
+		gap: 0;
+	}
+
+	&__title {
+		width: 100%;
+	}
+
+	&__details {
+		background-color: var(--wp--custom--colors--gray-200);
+		padding: var(--wp--custom--spacings--m);
+
+		> * {
+			padding-bottom: var(--wp--custom--spacings--s);
+		}
+
+	}
+
+	.wp-block-image {
+
+		@include flex-center;
+		width: 100%;
+	}
+}

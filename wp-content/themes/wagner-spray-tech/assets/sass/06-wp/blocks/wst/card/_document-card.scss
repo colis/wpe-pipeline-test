@@ -1,0 +1,33 @@
+/* ==========================================================================
+Document Card
+========================================================================== */
+.wst-blocks-document-card {
+
+	@include flex-center;
+	flex-direction: column;
+	border: 2px solid var(--wp--custom--colors--black);
+	padding: var(--wp--custom--spacings--m);
+	height: 100%;
+
+	&__title {
+		font-size: var(--wp--preset--font-size--medium);
+		font-weight: 700;
+		margin-bottom: var(--wp--custom--spacings--s);
+	}
+
+	&__button {
+		text-decoration: underline;
+		text-align: center;
+
+		&:hover {
+			color: var(--wp--custom--colors--black);
+		}
+	}
+}
+
+.block-editor-block-list__layout .wst-blocks-document-card {
+
+	* {
+		pointer-events: none;
+	}
+}

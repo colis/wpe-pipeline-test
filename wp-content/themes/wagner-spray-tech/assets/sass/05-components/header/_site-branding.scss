@@ -1,0 +1,24 @@
+/* ==========================================================================
+SITE BRANDING
+========================================================================== */
+
+.c-site-header__branding {
+	display: flex;
+	align-items: center;
+
+	.c-site-logo {
+		width: 152px;
+
+		@include up-to-tablet-landscape {
+			width: 120px;
+		}
+
+		img {
+			width: auto;
+		}
+	}
+
+	a {
+		display: block;
+	}
+}

@@ -1,0 +1,24 @@
+/* ==========================================================================
+PRODUCT SINGLE MOBILE ACCORDION IMPLEMENTATION
+========================================================================== */
+
+.c-product-accordion-item {
+
+	@extend .wp-block-wst-blocks-accordion-item; /* stylelint-disable-line */
+	margin: 0 calc(var(--wp--custom--grid--gutter) * -1);
+	padding: 0 var(--wp--custom--grid--gutter);
+
+	&__title {
+
+		@extend .wp-block-wst-blocks-accordion-item__title; /* stylelint-disable-line */
+	}
+
+	&__trigger {
+
+		@extend .wp-block-wst-blocks-accordion-item__trigger; /* stylelint-disable-line */
+	}
+
+	&__content {
+		@extend .wp-block-wst-blocks-accordion-item__content; /* stylelint-disable-line */
+	}
+}

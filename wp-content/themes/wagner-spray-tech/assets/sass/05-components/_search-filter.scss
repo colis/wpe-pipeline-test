@@ -1,0 +1,230 @@
+/* ==========================================================================
+SEARCH & FILTER
+========================================================================== */
+
+/* Filters */
+
+.searchandfilter {
+	margin: 0;
+
+	// Mobile Filters.
+	> ul {
+
+		&,
+		&[aria-hidden="true"] {
+
+			@include up-to-tablet-landscape {
+				display: none;
+			}
+		}
+
+		&[aria-hidden="false"] {
+
+			@include up-to-tablet-landscape {
+				display: block;
+				margin-top: var(--wp--custom--spacings--m);
+			}
+		}
+	}
+
+	// Mobile Filter Button.
+	.sf-filters-button {
+
+		@include reset_appearance;
+		display: none;
+		grid-template-columns: auto auto;
+		gap: var(--wp--custom--spacings--xs);
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+
+		@include up-to-tablet-landscape {
+			display: grid;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			height: 18px;
+			width: 16px;
+			background-image: url(map-get($images, 'icon-filter-bars'));
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+
+	ul {
+		padding: 0;
+	}
+
+	/* Fields */
+
+	// Field headings.
+	h4,
+	.sf-field-heading {
+		padding: 0;
+		margin: 0;
+		font-size: var(--wp--preset--font-size--small);
+		font-weight: 700;
+		line-height: 1.333;
+		letter-spacing: -0.02rem;
+
+		+ label,
+		+ ul {
+			margin-top: var(--wp--custom--spacings--s);
+		}
+	}
+
+	// All fields.
+	> ul > li {
+		padding: 0 0 var(--wp--custom--spacings--s);
+		margin: 0 0 var(--wp--custom--spacings--s);
+		width: 100%;
+		border-bottom: solid 2px var(--wp--custom--colors--gray-200);
+
+		&:last-of-type {
+			margin: 0;
+		}
+
+		&.closed {
+
+			&::before {
+				background-image: url(map-get($images, 'icon-accordion-open'));
+			}
+
+			ul {
+				display: none;
+			}
+		}
+
+		ul li {
+			display: flex;
+			align-items: center;
+			padding: 0;
+			margin: 0 !important;
+
+			+ li {
+				margin-top: var(--wp--custom--spacings--s) !important;
+			}
+		}
+	}
+
+	// Checkbox / Radio button fields.
+	li[data-sf-field-input-type="checkbox"],
+	li[data-sf-field-input-type="radio"],
+	li[data-sf-field-input-type="range-checkbox"],
+	li[data-sf-field-input-type="range-radio"] {
+		position: relative;
+
+		&::before {
+			content: "";
+			display: block;
+			height: 20px;
+			width: 20px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: -1;
+			background-image: url(map-get($images, 'icon-accordion-closed'));
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		h4,
+		.sf-field-heading {
+			cursor: pointer;
+
+			&:hover {
+				color: var(--wp--custom--colors--yellow);
+			}
+		}
+
+		li {
+
+			input,
+			label {
+				cursor: pointer;
+
+				&:hover {
+					color: var(--wp--custom--colors--yellow);
+				}
+			}
+		}
+
+		label {
+			padding: 0;
+		}
+	}
+
+	// Search & Sort Order fields.
+	.sf-field-search,
+	.sf-field-sort_order {
+		font-size: var(--wp--preset--font-size--small);
+
+		&,
+		label,
+		.sf-input-text,
+		.sf-input-select {
+			width: 100%;
+		}
+	}
+
+	// Reset field.
+	.sf-field-reset {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: var(--wp--custom--spacings--xs);
+		align-items: center;
+		justify-content: space-between;
+
+		h4,
+		.sf-field-heading {
+			font-size: var(--wp--preset--font-size--x-large);
+
+			@include up-to-tablet-landscape {
+				display: none;
+			}
+		}
+	}
+
+	.search-filter-reset {
+		font-size: var(--wp--preset--font-size--xx-small);
+		font-weight: 600;
+	}
+}
+
+/* Results */
+
+.search-filter-results__nav {
+	display: grid;
+	grid-template-columns: auto auto;
+	column-gap: var(--wp--custom--spacings--m);
+	row-gap: var(--wp--custom--spacings--s);
+	align-items: center;
+	justify-content: space-between;
+	margin-top: var(--wp--custom--spacings--m);
+	padding-top: var(--wp--custom--spacings--m);
+	border-top: solid 2px var(--wp--custom--colors--gray-200);
+
+	@include up-to-tablet-portrait {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+	}
+
+	.search-filter-results__stats {
+		font-size: var(--wp--preset--font-size--small);
+		font-weight: 700;
+
+		@include up-to-tablet-portrait {
+			text-align: center;
+		}
+	}
+
+	.pagination {
+		margin-top: 0;
+		padding-top: 0;
+		border-top: none;
+	}
+}

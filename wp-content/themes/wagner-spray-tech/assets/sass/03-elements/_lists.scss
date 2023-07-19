@@ -1,0 +1,40 @@
+/* ==========================================================================
+LISTS
+========================================================================== */
+
+.c-site-content {
+
+	ol,
+	ul {
+
+		&.list-none {
+
+			@include reset_list_style;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		// Ignore list items in the following conditions.
+		li:not(.wp-block-navigation-item):not(.wp-block-post):not(.wp-social-link):not([class^="sf-field"]):not(.c-algolia-instant-search__facet):not(.ais-Pagination-item):not(.gfield) {
+
+			+ li {
+				margin-top: 12px;
+			}
+		}
+
+		// Nested lists.
+		ul {
+			margin-top: var(--wp--custom--spacings--xxs);
+
+			li + li {
+				margin-top: var(--wp--custom--spacings--xxs) !important;
+			}
+		}
+	}
+
+	ol ul {
+		list-style-type: lower-alpha;
+	}
+}

@@ -1,0 +1,92 @@
+/* ==========================================================================
+MOBILE NAVIGATION
+========================================================================== */
+
+// Menu burger buttons.
+
+.c-site-header__menu-button-container {
+	display: none;
+	align-items: center;
+	grid-gap: var(--wp--custom--spacings--xs);
+	gap: var(--wp--custom--spacings--xs);
+	margin-left: auto;
+
+	@include up-to-tablet-landscape {
+		display: flex;
+	}
+
+	.button,
+	.button:hover,
+	.button:focus,
+	.button:active {
+		color: var(--wp--custom--colors--black) !important;
+		background: transparent !important;
+	}
+
+	.button {
+
+		@include reset_button_element;
+		display: flex;
+		align-items: center;
+		grid-gap: 10px;
+		padding: var(--wp--custom--spacings--xs);
+		cursor: pointer;
+	}
+}
+
+#primary-close-menu.button {
+	display: none;
+	color: var(--wp--custom--colors--gray) !important;
+}
+
+// Mobile menu toggled.
+
+body.primary-navigation-open {
+
+	.primary-navigation {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+	}
+
+	.primary-menu-container {
+		position: fixed;
+		top: 82px; // Header height.
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 99;
+		padding: var(--wp--custom--grid--gutter) var(--wp--custom--grid--gutter);
+		background-color: var(--wp--custom--colors--white);
+		overflow-x: hidden;
+		overflow-y: scroll;
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	#primary-open-menu.button {
+		display: none;
+	}
+
+	#primary-close-menu.button {
+		display: flex;
+
+	}
+}
+
+.lock-scrolling {
+	overflow: hidden;
+	position: relative;
+}
+
+// Move mobile navigation if user is logged in,
+// to account for WP admin bar.
+
+body.primary-navigation-open.admin-bar #masthead {
+
+	.primary-navigation .primary-menu-container {
+		margin-top: var(--wp-admin-bar);
+	}
+}

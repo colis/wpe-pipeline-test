@@ -1,0 +1,40 @@
+/**
+* Quick Links Block
+*/
+.wp-block-wst-blocks-quick-links {
+	background-color: var(--wp--custom--colors--black);
+	color: var(--wp--custom--colors--white);
+	margin: var(--wp--custom--spacings--m) 0;
+	padding: var(--wp--custom--spacings--s);
+	font-family: var(--wp--custom--fonts--body);
+	text-transform: capitalize;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		li {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			a {
+				margin: 0 var(--wp--custom--spacings--s);
+				color: var(--wp--custom--colors--white);
+				text-decoration: none;
+				border-bottom: 1px solid transparent;
+
+				&:hover {
+					color: var(--wp--custom--colors--white);
+					border-bottom-color: var(--wp--custom--colors--yellow);
+
+				}
+			}
+		}
+	}
+
+}

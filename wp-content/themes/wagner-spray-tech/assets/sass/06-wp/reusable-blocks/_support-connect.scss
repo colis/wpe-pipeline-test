@@ -1,0 +1,24 @@
+//------------------------------------
+// Support Connect Block.
+//------------------------------------
+.wst-support-connect {
+
+	&__figure {
+
+		@include flex-center;
+		flex-direction: column;
+		background-color: var(--wp--custom--colors--gray-100);
+		padding: var(--wp--custom--spacings--m);
+
+		.wp-element-caption {
+			text-align: center;
+			min-height: var(--wp--custom--spacings--xxxl);
+
+			strong {
+				font-size: var(--wp--preset--font-size--medium);
+				display: block;
+			}
+		}
+
+	}
+}

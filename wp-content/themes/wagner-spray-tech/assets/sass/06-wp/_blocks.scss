@@ -1,0 +1,35 @@
+//------------------------------------
+// Import blocks.
+//------------------------------------
+
+/* Core */
+
+@import "blocks/core/blockquote";
+@import "blocks/core/buttons";
+@import "blocks/core/columns";
+@import "blocks/core/cover";
+@import "blocks/core/embed";
+@import "blocks/core/group";
+@import "blocks/core/image";
+@import "blocks/core/media-text";
+@import "blocks/core/navigation";
+@import "blocks/core/post";
+@import "blocks/core/pullquote";
+@import "blocks/core/quote";
+@import "blocks/core/separator";
+@import "blocks/core/social-links";
+@import "blocks/core/table";
+@import "blocks/plugin/flexible-table-block";
+
+/* Custom */
+
+@import "blocks/wst/accordion";
+@import "blocks/wst/content-selector";
+@import "blocks/wst/card/product-series-card";
+@import "blocks/wst/card/project-card";
+@import "blocks/wst/card/product-card";
+@import "blocks/wst/card/how-to-card";
+@import "blocks/wst/card/document-card";
+@import "blocks/wst/card/testimonial-card";
+@import "blocks/wst/card/related-faq-card";
+@import "blocks/wst/quick-links";

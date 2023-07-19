@@ -1,0 +1,21 @@
+/**
+ * Hero Carousel Block Editor Styles
+ */
+
+.wp-block-wst-hero-carousel.wp-block {
+	padding: var(--wp--custom--spacings--l);
+	box-sizing: border-box;
+}
+
+.wp-block-wst-hero-carousel.wp-block,
+.wp-block-wst-hero-carousel.wp-block.is-editing > .block-editor-inner-blocks > .block-editor-block-list__layout {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--custom--spacings--l);
+}
+
+.wp-block-wst-hero-carousel.wp-block
+.wp-block-wst-hero-carousel-item__cover
+.wp-block-cover__inner-container {
+	max-width: none;
+}

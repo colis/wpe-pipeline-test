@@ -1,0 +1,26 @@
+/* ==========================================================================
+COLUMNS BLOCK
+========================================================================== */
+
+.wp-block-columns {
+	--gap: var(--wp--custom--spacings--xl);
+
+	@include up-to-tablet-landscape {
+		--gap: var(--wp--custom--spacings--m);
+	}
+
+	margin: 0;
+	gap: var(--gap);
+
+	+ .wp-block-columns {
+		margin-top: var(--gap);
+	}
+}
+
+.wp-block-column {
+	border-radius: 0.25rem;
+
+	&.has-border-color {
+		border-width: 2px !important;
+	}
+}

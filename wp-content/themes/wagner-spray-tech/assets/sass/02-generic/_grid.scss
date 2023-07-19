@@ -1,0 +1,114 @@
+//==========================================================================
+// GRID
+//==========================================================================
+
+// Posts.
+
+.grid-posts,
+%grid-posts {
+	display: grid;
+	grid-column-gap: var(--wp--custom--spacings--l);
+	grid-row-gap: var(--wp--custom--spacings--xl);
+}
+
+.grid-posts__4,
+%grid-posts__4 {
+
+	@include grid_columns(4);
+
+	@include up-to-tablet-landscape {
+
+		@include grid_columns(3);
+	}
+
+	@include up-to-tablet-portrait {
+
+		@include grid_columns(2);
+		grid-column-gap: var(--wp--custom--spacings--m);
+	}
+
+	@include up-to-phone {
+
+		grid-template-columns: 1fr;
+		grid-row-gap: var(--wp--custom--spacings--l);
+	}
+}
+
+.grid-posts__3,
+%grid-posts__3 {
+
+	@include grid_columns(3);
+
+	@include up-to-tablet-portrait {
+
+		@include grid_columns(2);
+		grid-column-gap: var(--wp--custom--spacings--m);
+	}
+
+	@include up-to-phone {
+		grid-template-columns: 1fr;
+		grid-row-gap: var(--wp--custom--spacings--l);
+	}
+}
+
+.grid-posts__2,
+%grid-posts__2 {
+
+	@include grid_columns(2);
+
+	@include up-to-phone {
+		grid-template-columns: 1fr;
+		grid-row-gap: var(--wp--custom--spacings--l);
+	}
+}
+
+// Column.
+
+.grid-col,
+%grid-col {
+	display: flex;
+}
+
+// Card.
+
+.grid-card,
+%grid-card {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+// Gaps.
+
+.grid-gap-s {
+	gap: var(--wp--custom--spacings--s);
+}
+
+.grid-gap-m {
+	gap: var(--wp--custom--spacings--m);
+}
+
+.grid-gap-col-s {
+	column-gap: var(--wp--custom--spacings--s);
+}
+
+.grid-gap-col-m {
+	column-gap: var(--wp--custom--spacings--m);
+}
+
+.grid-gap-row-s {
+	row-gap: var(--wp--custom--spacings--s);
+}
+
+.grid-gap-row-m {
+	row-gap: var(--wp--custom--spacings--m);
+}
+
+.grid-gap-row-xl {
+	--gap: var(--wp--custom--spacings--xl);
+	row-gap: var(--gap);
+
+	@include up-to-tablet-landscape {
+		--gap: var(--wp--custom--spacings--m);
+	}
+}

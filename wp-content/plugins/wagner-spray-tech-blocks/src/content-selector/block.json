@@ -1,0 +1,68 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"title": "Content Selector",
+	"description": "Create a list/grid of content types.",
+	"category": "wst-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"name": "wst-blocks/content-selector",
+	"viewScript": [ "file:./scripts.js", "glide-js" ],
+	"style": [ "glide-core-css" ],
+	"render": "file:./render.php",
+	"textdomain": "wagner-spray-tech-blocks",
+	"keywords": [ "cards", "post types" ],
+	"icon": "megaphone",
+	"attributes": {
+		"contentTypes": {
+			"type": "array",
+			"default": []
+		},
+		"taxonomyFilters": {
+			"type": "array",
+			"default": []
+		},
+		"isDynamic": {
+			"type": "boolean",
+			"default": true
+		},
+		"layout": {
+			"type": "string",
+			"default": "grid"
+		},
+		"gridColumns": {
+			"type": "number",
+			"default": 4
+		},
+		"sliderColumns": {
+			"type": "number",
+			"default": 4
+		},
+		"maxResults": {
+			"type": "number",
+			"default": 4
+		},
+		"selectedPosts": {
+			"type": "array",
+			"default": []
+		},
+		"allowedBlocks": {
+			"type": "array",
+			"default": []
+		},
+		"selectedBlockType": {
+			"type": "string",
+			"default": ""
+		},
+		"selectedBlockTypeRenderPath": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"align": false,
+		"spacing": {
+			"padding": [ "top", "bottom" ]
+		}
+	}
+}

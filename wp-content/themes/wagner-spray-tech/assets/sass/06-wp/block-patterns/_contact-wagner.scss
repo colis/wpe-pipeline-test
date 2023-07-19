@@ -1,0 +1,36 @@
+//------------------------------------
+// Contact Wagner Block Pattern.
+//------------------------------------
+.wst-contact-wagner {
+
+	padding: 0;
+
+	.wp-block-columns {
+
+		gap: 0;
+
+		.wp-block-column {
+
+			&:first-child,
+			&:last-child {
+
+				@include flex-center;
+				flex-grow: unset;
+				flex-basis: auto;
+
+				@include for-tablet-landscape-up {
+					width: 30%;
+				}
+			}
+
+			&:last-child {
+				align-items: end;
+
+				.wp-block-image {
+
+					@include reset-all;
+				}
+			}
+		}
+	}
+}

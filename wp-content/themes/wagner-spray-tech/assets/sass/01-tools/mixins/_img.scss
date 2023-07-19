@@ -1,0 +1,29 @@
+/* ==========================================================================
+IMAGES
+========================================================================== */
+
+/**
+ * Fit an image to its container
+ */
+@mixin fit-image {
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+/**
+ * Shortcut to background image properties
+ */
+@mixin background-image(
+	$url: false,
+	$position: "center center",
+	$size: "cover"
+) {
+
+	@if $url {
+		background-image: url($url);
+	}
+	background-position: $position;
+	background-repeat: no-repeat;
+	background-size: $size;
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wst-blocks/tabs",
+	"title": "Tabs",
+	"category": "wst-blocks",
+	"icon": "table-row-after",
+	"description": "Organize content within tabs.",
+	"keywords": [ "tabs" ],
+	"textdomain": "wagner-spray-tech-blocks",
+	"attributes": {
+		"tabsPerView": {
+			"type": "integer",
+			"default": 4
+		}
+	},
+	"supports": {
+		"align": false
+	},
+	"editorScript": "file:./index.js"
+}

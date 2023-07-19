@@ -1,0 +1,27 @@
+/* ==========================================================================
+PULLQUOTE BLOCK
+========================================================================== */
+
+.wp-block-pullquote {
+	padding-top: var(--wp--custom--spacings--m);
+	padding-bottom: var(--wp--custom--spacings--m);
+	border-width: 6px;
+
+	@include up-to-tablet-portrait {
+		padding-top: var(--wp--custom--spacings--s);
+		padding-bottom: var(--wp--custom--spacings--s);
+		font-size: 1.3em;
+	}
+
+	&.has-black-background-color {
+		border-color: var(--wp--custom--colors--yellow);
+	}
+
+	cite {
+		font-size: 1.125rem;
+
+		@include up-to-tablet-portrait {
+			font-size: 1rem;
+		}
+	}
+}

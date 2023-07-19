@@ -1,0 +1,25 @@
+/* ==========================================================================
+TRANSITION
+========================================================================== */
+
+
+/**
+ * Default transitions
+ */
+@mixin default_transition($property: all) {
+
+	@include transition($property, ease-in-out, 0.3s);
+}
+
+/**
+ * Transition shortcut
+ */
+@mixin transition($property: false, $easing: "ease", $duration: 0.2s, $delay: false) {
+	transition-duration: $duration;
+	transition-property: $property;
+
+	@if ($delay) {
+		transition-delay: $delay;
+	}
+	transition-timing-function: $easing;
+}

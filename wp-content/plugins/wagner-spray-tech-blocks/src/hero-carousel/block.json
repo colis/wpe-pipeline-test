@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wst-blocks/hero-carousel",
+	"title": "Hero Carousel",
+	"category": "wst-blocks",
+	"icon": "image-flip-horizontal",
+	"description": "Create an interactive carousel of images and text.",
+	"keywords": [ "hero", "carousel" ],
+	"textdomain": "wagner-spray-tech-blocks",
+	"attributes": {
+		"slideCount": {
+			"type": "integer",
+			"default": 0
+		}
+	},
+	"supports": {
+		"align": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor.css",
+	"style": "file:./styles.css"
+}

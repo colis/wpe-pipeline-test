@@ -1,0 +1,31 @@
+/* ==========================================================================
+Related FAQ Card
+========================================================================== */
+.wst-blocks-related-faq-card {
+	border: 4px solid var(--wp--custom--colors--black);
+	border-radius: 0.25rem;
+	align-content: space-between;
+
+	a:where(:not(.wp-element-button)) {
+		text-decoration: underline;
+		display: flex;
+		align-items: center;
+		color: var(--wp--custom--colors--black);
+	}
+
+	.wst-blocks-related-faq-card__button {
+
+		@include button_icon;
+		margin-top: auto;
+		margin-bottom: 0;
+		font-weight: 700;
+	}
+}
+
+// List layout styles, just in case.
+.wst-blocks-content-selector--list {
+
+	.wst-blocks-related-faq-card:not(:last-child) {
+		margin-bottom: var(--wp--custom--spacings--s);
+	}
+}

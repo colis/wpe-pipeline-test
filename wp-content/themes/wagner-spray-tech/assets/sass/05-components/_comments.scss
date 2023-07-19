@@ -1,0 +1,116 @@
+/* ==========================================================================
+COMMENTS
+========================================================================== */
+
+.c-comments-area {
+	margin-top: var(--wp--custom--spacings--xl);
+	padding-top: var(--wp--custom--spacings--xl);
+	border-top: solid 1px var(--wp--custom--colors--black-015);
+
+	.c-comments-area__list,
+	.children {
+
+		@include reset_list_style;
+	}
+
+	.c-comments-area__list {
+		margin-bottom: var(--wp--custom--spacings--xl);
+	}
+
+	.children {
+		margin-left: var(--wp--custom--spacings--l);
+	}
+}
+
+.c-comments-area__title,
+.comment-reply-title {
+
+	@include font_prop_sidebar_sub_heading;
+	font-size: var(--wp--preset--font-size--body-desktop);
+	margin-bottom: var(--wp--custom--spacings--m);
+}
+
+.c-comments-area__list {
+
+	.comment {
+		margin-top: var(--wp--custom--spacings--m);
+
+		+ .comment {
+			padding-top: var(--wp--custom--spacings--m);
+			border-top: solid 1px var(--wp--custom--colors--black-01);
+		}
+	}
+
+	.avatar {
+		margin-bottom: var(--wp--custom--spacings--xs);
+	}
+
+	.comment-metadata {
+
+
+		a {
+			color: var(--wp--custom--colors--black-05);
+			font-size: var(--wp--preset--font-size--small);
+			text-decoration: none;
+		}
+	}
+
+	.comment-content {
+		margin-top: var(--wp--custom--spacings--xs);
+		margin-bottom: var(--wp--custom--spacings--xs);
+	}
+}
+
+.comment-form {
+	display: flex;
+	flex-wrap: wrap;
+	grid-column-gap: var(--wp--custom--spacings--m);
+	column-gap: var(--wp--custom--spacings--m);
+	grid-row-gap: var(--wp--custom--spacings--s);
+	row-gap: var(--wp--custom--spacings--s);
+
+	p {
+		margin-bottom: 0;
+	}
+
+	label {
+
+		@include font_prop_sidebar_sub_heading;
+		display: block;
+	}
+
+	input,
+	textarea {
+		width: 100%;
+	}
+
+	.form-submit .submit {
+
+		@include button;
+		margin-top: var(--wp--custom--spacings--xs);
+	}
+}
+
+.comment-form-comment {
+	display: grid;
+	flex-basis: 100%;
+	max-width: 100%;
+}
+
+.comment-form-author,
+.comment-form-email {
+	flex-basis: calc(50% - 12px);
+	max-width: calc(50% - 12px);
+}
+
+.comment-form-url {
+	display: none;
+}
+
+#cancel-comment-reply-link:not(:hover) {
+	color: var(--wp--custom--colors--black-05);
+}
+
+.required {
+	color: var(--wp--custom--colors--gray);
+}

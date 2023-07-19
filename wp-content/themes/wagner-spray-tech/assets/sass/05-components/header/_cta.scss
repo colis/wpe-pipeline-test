@@ -1,0 +1,22 @@
+/* ==========================================================================
+HEADER CALL-TO-ACTIONS
+========================================================================== */
+
+.c-site-header__cta {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	align-items: center;
+	justify-content: flex-end;
+
+	.button {
+		padding: var(--wp--custom--spacings--xs);
+		margin-left: var(--wp--custom--spacings--xs);
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: var(--wp--custom--colors--black) !important;
+			color: var(--wp--custom--colors--yellow) !important;
+		}
+	}
+}

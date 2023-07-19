@@ -1,0 +1,39 @@
+/* ==========================================================================
+SOCIAL SHARE
+========================================================================== */
+
+.o-social-share {
+	display: flex;
+	align-items: center;
+	margin: 4px 0 0;
+}
+
+.o-social-share__label {
+	color: var(--wp--custom--colors--grey-2);
+	margin-right: 12px;
+}
+
+.o-social-share__link {
+
+	@include flex-center;
+	height: 30px;
+	width: 30px;
+	background-color: var(--wp--custom--colors--black);
+	border-radius: 2px;
+
+	+ .o-social-share__link {
+		margin-left: var(--wp--custom--spacings--xs);
+	}
+
+	&:hover {
+		background-color: var(--wp--custom--colors--gray);
+	}
+
+	svg path {
+		fill: var(--wp--custom--colors--white);
+	}
+}
+
+.c-post-content-footer + .o-social-share {
+	margin-top: var(--wp--custom--spacings--m);
+}

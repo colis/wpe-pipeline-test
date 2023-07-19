@@ -1,0 +1,44 @@
+/* ==========================================================================
+PRODUCT PAGE HERO
+========================================================================== */
+
+$product_image_container_height: 500px;
+
+@import "page-hero-product-gallery";
+@import "page-hero-product-details";
+@import "page-hero-product-thumbnails";
+
+.c-page-hero__product {
+
+	display: grid;
+	grid-column-gap: var(--wp--custom--spacings--l);
+	padding: var(--wp--custom--spacings--l) 0;
+
+	@include up-to-tablet-landscape {
+		grid-template-rows: repeat(2, auto);
+		grid-template-areas: "product-details";
+	}
+
+	@include for-tablet-landscape-up {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas: "product-gallery product-details";
+	}
+
+	.support-block {
+
+		@include flex-center;
+		flex-direction: column;
+		padding: var(--wp--custom--spacings--l);
+		gap: var(--wp--custom--spacings--s);
+		margin-top: var(--wp--custom--spacings--l);
+
+		* {
+
+			@include reset_all;
+			margin: 0 auto;
+
+		}
+	}
+
+}
+
